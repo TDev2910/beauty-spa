@@ -1,0 +1,43 @@
+/* Global Modal Popup components */
+.popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    position: relative;
+    text-align: center;
+    color: #333;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px; right: 15px;
+    font-size: 30px;
+    background: none; border: none; cursor: pointer;
+    color: #999;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.popup-content input, .popup-content select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
