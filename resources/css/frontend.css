@@ -1,1 +1,26 @@
-/* file CSS rỗng */
+/* CSS Frontend Tổng */
+@import './frontend/abstracts/_animations.css';
+@import './frontend/components/_buttons.css';
+@import './frontend/components/_modals.css';
+@import './frontend/layouts/_navbar.css';
+
+:root {
+    --primary-color: #a21d44;
+    --secondary-color: #D4AF37;
+    --text-color: #333333;
+    --bg-light: #F9F9F9;
+    --font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    background-color: #fff;
+    line-height: 1.6;
+}

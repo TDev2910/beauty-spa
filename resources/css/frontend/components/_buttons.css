@@ -1,0 +1,35 @@
+/* Global Buttons */
+.btn-nhan-uu-dai {
+    margin-left: auto;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    animation: rung-lac 1.2s infinite ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.btn-nhan-uu-dai:hover {
+    background: #ffffff;
+    color: #a21d44;
+}
+
+.btn-submit {
+    background: #a21d44;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn-submit:hover {
+    background: #8b183a;
+}

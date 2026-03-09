@@ -1,0 +1,14 @@
+/* Keyframes và Animations dùng chung */
+@keyframes rung-lac {
+  0% { transform: scale(1); }
+  10%, 20% { transform: scale(1.1) rotate(-3deg); }
+  30%, 50%, 70%, 90% { transform: scale(1.1) rotate(3deg); }
+  40%, 60%, 80% { transform: scale(1.1) rotate(-3deg); }
+  100% { transform: scale(1) rotate(0); }
+}
+
+@keyframes phong-to-thu-nho {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
