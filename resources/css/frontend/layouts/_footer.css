@@ -1,0 +1,113 @@
+/* Footer Layout */
+.footer-wrapper {
+    background-color: #a21d44; /* Dùng màu đỏ chủ đạo của web */
+    color: #ffffff;
+    padding-top: 50px;
+    margin-top: 50px; /* Cách các phần tử phía trên 1 đoạn */
+}
+
+.footer-wrapper .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Tự động xuống dòng trên mobile, chia đều cột trên PC */
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-logo {
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.footer-col h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 3px;
+    background-color: #D4AF37; /* Đường gạch dưới màu vàng Gold */
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* Danh sách link liên kết */
+.footer-links {
+    list-style: none; /* Ẩn dấu chấm đầu dòng mặc định */
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:before {
+    content: "❯"; /* Dấu mũi tên nhỏ đi vào trước mỗi link */
+    font-size: 10px;
+    margin-right: 8px;
+    color: #D4AF37;
+}
+
+.footer-links a:hover {
+    color: #D4AF37;
+    margin-left: 5px; /* Hiệu ứng kéo nhẹ sang phải khi trỏ chuột */
+}
+
+/* Kết nối mạng xã hội */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-icon {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.social-icon:hover {
+    color: #D4AF37;
+}
+
+/* Dòng Bản quyền dưới cùng (Bottom bar) */
+.footer-bottom {
+    background-color: #7a1533; /* Đỏ đậm hơn chút cho phần dưới cùng */
+    padding: 15px 0;
+    text-align: center;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    margin: 0;
+}
