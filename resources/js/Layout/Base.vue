@@ -1,7 +1,7 @@
 <template>
     <div class="layout">
         <!-- Header -->
-        <Header/>
+        <Header />
 
         <!-- Main content -->
         <main>
@@ -9,7 +9,7 @@
         </main>
 
         <!-- Footer -->
-        <Footer/>
+        <Footer />
     </div>
 </template>
 

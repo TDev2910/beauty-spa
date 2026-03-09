@@ -1,5 +1,5 @@
 <template>
-    Header
+    code header là xong
 </template>
 
 <script setup>
