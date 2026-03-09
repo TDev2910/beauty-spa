@@ -8,9 +8,33 @@
 :root {
     --primary-color: #a21d44;
     --secondary-color: #D4AF37;
+    --dark-color-600: hsl(214, 91%, 26%);
+    --dark-color-400: hsl(214, 91%, 60%);
     --text-color: #333333;
     --bg-light: #F9F9F9;
     --font-family: 'Montserrat', sans-serif;
+
+    --fs-300: 0.8125rem;
+    --fs-400: 0.875rem;
+    --fs-500: 0.9375rem;
+    --fs-600: 1rem;
+    --fs-700: 1.5rem;
+    --fs-800: 1.875rem;
+    --fs-900: 2.5rem;
+    --fs-1000: 3.5rem;
+
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+
+    --fs-body: var(--fs-400);
+    --fs-primary-heading: var(--fs-900);
+    --fs-secondary-heading: var(--fs-800);
+    --fs-normal-heading: var(--fs-700);
+    --fs-table: var(--fs-300);
+    --fs-label: var(--fs-500);
+    --fs-nav: var(--fs-500);
+    --fs-button: var(--fs-600);
 }
 
 * {
@@ -24,4 +48,24 @@ body {
     color: var(--text-color);
     background-color: #fff;
     line-height: 1.6;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.layout{
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: minmax(0, 1fr);
+}
+
+.container{
+    margin-inline:auto;
+}
+
+/* animation class */
+.text-blink {
+  /* Gọi tên kịch bản, chạy trong 1 giây, tốc độ đều, lặp lại vô hạn */
+  animation: blink-effect 1s linear infinite; 
 }
