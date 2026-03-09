@@ -3,6 +3,7 @@
 @import './frontend/components/_buttons.css';
 @import './frontend/components/_modals.css';
 @import './frontend/layouts/_navbar.css';
+@import './frontend/layouts/_footer.css';
 
 :root {
     --primary-color: #a21d44;
