@@ -26,8 +26,8 @@
                 </div>
             </div>
         </div>
-        <Navbar />
     </header>
+    <Navbar />
 
 </template>
 
@@ -89,32 +89,40 @@
     font-size: var(--fs-body);
     font-weight: var(--fw-bold);
     text-align: center;
-    display: flex;
-    align-items: stretch;
+    gap: 8px;
+    align-items: center;
     flex-wrap: wrap;
 }
 
-.top-header .th-content .th-combo .th-combo-item{
-    background-color: var(--primary-color);
-    padding: 0.5rem;
+.top-header .th-content .th-combo .th-combo-item {
+    padding: 6px 20px;
+    border-radius: 50px;
+    flex: none; 
+    min-width: 110px;
+    height: 54px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.5rem;
-    line-height: 1.2;
-    flex:1;
-    min-width:0;
+    background-color: #a21d44;
 }
 
-.top-header .th-content .th-combo .th-combo-item:not(:first-child, :last-child) {
-    background-color: var(--dark-color-400);
+.top-header .th-content .th-combo .th-combo-item:nth-child(2) {
+    background-color: #0066ff;
+    min-width: 90px;
 }
 
-.top-header .th-content .th-combo .th-combo-item span{
-    word-break: break-word;
-    font-size: var(--fs-700);
+.top-header .th-content .th-combo .th-combo-item span {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
 }
 
+.top-header .th-content .th-combo .th-combo-item:nth-child(2) span {
+    font-size: 22px;
+}
 </style>
 
 <script setup>
