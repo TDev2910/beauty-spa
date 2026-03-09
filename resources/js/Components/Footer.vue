@@ -75,28 +75,62 @@
                             <a href="#">Xem Thêm Chi Nhánh Gần Nhất >></a>
                         </div>
                         <!-- form 2  -->
-                        <div class="footer-col">
-                            <div class="registration-form-box">
-                                <h2 class="reg-title">ĐĂNG KÝ NHẬN ƯU ĐÃI</h2>
-                                <p class="reg-sub"><i>*Chỉ áp dụng cho 30 khách hàng đăng ký đầu tiên*</i></p>
-                                <form @submit.prevent>
-                                    <div class="form-row">
-                                        <input type="text" placeholder="Họ và Tên">
-                                        <input type="tel" placeholder="Số điện thoại">
-                                    </div>
-                                    <textarea placeholder="Để lại lời nhắn cho chúng tôi"></textarea>
-                                    <div class="form-button">
-                                        <button type="submit">GỬI THÔNG TIN</button>
-                                    </div>
-                                </form>
-                            </div>
+                        <div class="registration-form-box">
+                            <h2 class="reg-title">ĐĂNG KÝ NHẬN ƯU ĐÃI</h2>
+                            <p class="reg-sub"><i style="color: #000;font-size: 15px;font-weight: bold;">*Chỉ áp dụng cho 30 khách hàng đăng ký đầu tiên*</i></p>
+                            <form @submit.prevent>
+                                <div class="form-row">
+                                    <input type="text" placeholder="Họ và Tên">
+                                    <input type="tel" placeholder="Số điện thoại">
+                                </div>
+                                <div class="form-row" style="height: 50px;">
+                                    <input type="text" placeholder="Để lại lời nhắn cho chúng tôi">
+                                </div>
+                                <div class="form-button">
+                                    <button type="submit">GỬI THÔNG TIN</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="ticker-container">
+                <div class="ticker-text">
+                    <p>--------------------------</p>
+                    <p>"Mức Độ Hiệu Quả Tùy Vào Cơ Địa Của Mỗi Khách Hàng"</p>
+                </div>
+                <transition name="fade-slide" mode="out-in">
+                    <p :key="currentTextIndex" class="ticker-text">
+                        {{ notices[currentTextIndex] }}
+                    </p>
+                </transition>
+            </div>
         </div>
     </footer>
 </template>
+
+<script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const notices = [
+    "∙ Quý Khách Hàng Sẽ Được Thực Hiện Dịch Vụ Tại Các Phòng Khám Thuộc Hệ Thống Thẩm Mỹ Quốc Tế Seoul Center Theo Chức Năng ∙",
+    "∙ Seoul Center Lưu Ý Quý Khách Hàng ∙"
+];
+
+const currentTextIndex = ref(0);
+let timer = 0;
+
+onMounted(() => {
+    timer = setInterval(() => {
+        currentTextIndex.value = (currentTextIndex.value + 1) % notices.length;
+    }, 3000);
+});
+
+onUnmounted(() => {
+    clearInterval(timer);
+});
+
+</script>
 
 <style scoped>
 .ladi-image {
@@ -151,15 +185,15 @@
     display: flex;
     flex-direction: column;
     max-width: 750px;
-    /* Thêm dòng này, bạn tùy chỉnh số 450 này nhỏ lại nếu muốn */
     margin: 0 auto;
-    /* Để khung luôn nằm giữa cột */
+    gap: 15px;
 }
 
 .branch-header-box {
     border: 1px solid #fff;
-    border-radius: 8px;
-    padding: 8px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 15px;
     text-align: center;
     font-weight: 700;
     margin-bottom: 12px;
@@ -176,13 +210,13 @@
 .branch-sub {
     font-weight: bold;
     color: #a21d44;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
     margin-bottom: 10px;
 }
 
 .branch-list {
-    max-height: 350px;
+    max-height: 170px;
     overflow-y: auto;
     padding-right: 5px;
 }
@@ -207,14 +241,30 @@
     font-size: 13px;
 }
 
+.branch-item p:not(.branch-name) {
+    color: #000;
+    font-weight: 600;
+}
+
 .branch-name {
     color: #a21d44;
     font-weight: 700;
+    position: relative;
+    padding-left: 12px;
+}
+
+.branch-name::before {
+    content: '·';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 18px;
+    line-height: 1;
 }
 
 .view-more-link {
     text-align: center;
-    margin-top: 10px;
+    margin-top: 5px;
     color: #fff;
 }
 
@@ -254,29 +304,70 @@
 
 .form-row input {
     flex: 1;
-    padding: 12px;
-    border: 1px solid #ddd;
+    padding: 6px;
+    border: 1px solid #a21d44;
     border-radius: 5px;
+    color: #000;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.form-row input::placeholder,
+textarea::placeholder {
+    color: #000;
+    font-weight: 700;
 }
 
 textarea {
     width: 100%;
-    height: 80px;
+    height: 40px;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid #a21d44;
     border-radius: 5px;
     margin-bottom: 15px;
     resize: none;
+    color: #000;
+    font-weight: 700;
+}
+
+.form-button {
+    text-align: center;
 }
 
 .form-button button {
     background: #a21d44;
     color: #fff;
     border: none;
-    padding: 10px 40px;
-    border-radius: 25px;
+    padding: 7px 35px;
+    border-radius: 15px;
     font-weight: 700;
     cursor: pointer;
     text-align: center;
+    margin-top: 8px;
+}
+
+.ticker-container {
+    margin-top: -35px;
+    padding: 10px 0;
+    text-align: center;
+    overflow: hidden;
+}
+
+.ticker-text {
+    font-size: 17px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Ticker Animation */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+    opacity: 0;
+    transform: translateX(-10px);
 }
 </style>
