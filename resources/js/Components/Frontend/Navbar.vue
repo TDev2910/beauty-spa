@@ -5,7 +5,7 @@ const isPopupOpen = ref(false);
 </script>
 
 <template>
-    <header class="navbar-wrapper">
+    <div class="navbar-wrapper">
         <div class="container">
             <!-- Logo -->
             <div class="logo">
@@ -44,5 +44,5 @@ const isPopupOpen = ref(false);
                 </form>
             </div>
         </div>
-    </header>
+    </div>
 </template>
