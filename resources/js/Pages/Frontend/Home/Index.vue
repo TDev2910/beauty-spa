@@ -1,5 +1,7 @@
 <script setup>
 import AboutUs from "../Home/Partials/AboutUs.vue";
+import ServiceCategories from "../Home/Partials/ServiceCategories.vue";
+import FloatingContact from "../../../Components/Frontend/FloatingContact.vue";
 const bannerUrl = "/img/banner-seoul-center.png";
 const bannerAlt = "Chương trình tặng Combo PC Fix Seoul Center";
 </script>
@@ -31,6 +33,7 @@ const bannerAlt = "Chương trình tặng Combo PC Fix Seoul Center";
         </form>
     </div>
     <AboutUs />
+    <ServiceCategories />
     <FloatingContact />
 </template>
 

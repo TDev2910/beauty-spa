@@ -95,7 +95,6 @@
     position: relative;
     width: 470px;
     height: 470px;
-    border: 1px solid;
 }
 
 .au-gallery .gallery-item{
