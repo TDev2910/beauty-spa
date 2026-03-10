@@ -101,7 +101,6 @@
 .top-header .th-content .th-combo {
     padding: 0.25rem;
     color: #fff;
-    font-size: var(--fs-body);
     font-weight: var(--fw-bold);
     text-align: center;
     display: flex;
@@ -129,7 +128,7 @@
 }
 
 .top-header .th-content .th-combo .th-combo-item span {
-    font-size: var(--fs-700);
+    font-size: var(--fs-normal-heading);
     white-space: nowrap;
 }
 
@@ -140,7 +139,7 @@
     
     .top-header .th-content .th-combo .th-combo-item span {
         /* Thu nhỏ cỡ chữ xuống mức mặc định thay vì dùng fs-700 to đùng */
-        font-size: var(--fs-body); 
+        font-size: var(--fs-button); 
     }
 }
 
