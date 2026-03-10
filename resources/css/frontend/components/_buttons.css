@@ -9,6 +9,7 @@
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
+    width: 200px;
     animation: rung-lac 1.2s infinite ease-in-out;
     transition: all 0.3s ease;
 }
