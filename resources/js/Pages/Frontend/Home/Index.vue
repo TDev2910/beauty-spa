@@ -1,4 +1,5 @@
 <script setup>
+import AboutUs from "../Home/Partials/AboutUs.vue";
 const bannerUrl = "/img/banner-seoul-center.png";
 const bannerAlt = "Chương trình tặng Combo PC Fix Seoul Center";
 </script>
@@ -24,6 +25,7 @@ const bannerAlt = "Chương trình tặng Combo PC Fix Seoul Center";
             </div>
         </form>
     </div>
+    <AboutUs />
 </template>
 
 <style scoped>

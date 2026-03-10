@@ -1,4 +1,5 @@
 import "./bootstrap";
+import "../css/reset.css";
 import "../css/app.css";
 import "../css/frontend.css";
 import { createApp, h } from "vue";
