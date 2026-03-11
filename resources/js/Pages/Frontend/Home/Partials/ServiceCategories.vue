@@ -22,12 +22,13 @@
 @reference "tailwindcss";
 
 .service-section {
+    padding-top: 3rem;
     background-color: var(--primary-color-200);
     padding: 1rem 0;
 }
 
 .ss-heading .ss-img {
-    background: url('../../../../../../public/img/su-heading.png') no-repeat center center;
+    background: url('../../../../../../public/img/service/service-heading.png') no-repeat center center;
     background-size: contain;
     width: 70%;
     aspect-ratio: 5/1;
@@ -60,13 +61,13 @@
 import { ref } from 'vue';
 
 let imagesList = ref([
-    '/img/service-item.png',
-    '/img/service-item2.png',
-    '/img/service-item3.png',
-    '/img/service-item4.png',
-    '/img/service-item5.png',
-    '/img/service-item6.png',
-    '/img/service-item7.png',
-    '/img/service-item8.png'
+    '/img/service/service-item1.png',
+    '/img/service/service-item2.png',
+    '/img/service/service-item3.png',
+    '/img/service/service-item4.png',
+    '/img/service/service-item5.png',
+    '/img/service/service-item6.png',
+    '/img/service/service-item7.png',
+    '/img/service/service-item8.png'
 ]);
 </script>
