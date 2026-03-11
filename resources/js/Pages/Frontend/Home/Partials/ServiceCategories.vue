@@ -46,11 +46,12 @@
 }
 
 .ss-list {
-    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4;
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 mt-2;
 }
 
 .ss-list .ss-item .ss-item-img {
     background-size: contain;
+    background-position: center top;
     width: 100%;
     aspect-ratio: 3/5;
 }

@@ -94,7 +94,7 @@ body {
 /* set background image */
 .set-bg-img {
     background-repeat: no-repeat!important;
-    background-position: center!important;
+    background-position: center center;
 }
 
 /* animation class */
