@@ -31,18 +31,11 @@
                 </div>
                 <div class="au-content-right">
                     <div class="au-gallery">
-                        <div class="gallery-item">
-                            <div class="gallery-img"></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-img"></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-img"></div>
-                        </div>
-                        <div class="gallery-item">
-                            <div class="gallery-img"></div>
-                        </div>
+                        <template v-for="(image, i) in imagesList">
+                            <div class="gallery-item">
+                                <div class="gallery-img | set-bg-img" :style="$getBgStyle(image)"></div>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
@@ -79,9 +72,10 @@
     color: var(--primary-color);
 }
 
-.au-content{
-    align-items:center;
+.au-content {
+    align-items: center;
     gap: 4rem;
+    margin-top: 1.5rem;
 }
 
 .au-content-left .au-text {
@@ -97,9 +91,16 @@
     height: 470px;
 }
 
-.au-gallery .gallery-item{
+.au-gallery .gallery-item {
     border: 2px solid var(--primary-color);
     overflow: hidden;
+}
+
+.au-gallery .gallery-item .gallery-img {
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
 }
 
 .au-gallery .gallery-item:nth-child(1) {
@@ -111,61 +112,38 @@
 
     border-radius: 10px 40px;
 }
-.au-gallery .gallery-item:nth-child(1) .gallery-img {
-    background-image: url('../../../../../../public/img/au-img1.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-
 .au-gallery .gallery-item:nth-child(2) {
     width: 182px;
     height: 182px;
     position: absolute;
     top: 259px;
     left: 258px;
-    border-radius: 10px 40px;   
+    border-radius: 10px 40px;
 }
-.au-gallery .gallery-item:nth-child(2) .gallery-img {
-    background-image: url('../../../../../../public/img/au-img3.jpg');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-
 .au-gallery .gallery-item:nth-child(3) {
     width: 212px;
     height: 212px;
     position: absolute;
     top: 40px;
     left: 258px;
-    border-radius: 40px 10px;   
+    border-radius: 40px 10px;
 }
-.au-gallery .gallery-item:nth-child(3) .gallery-img {
-    background-image: url('../../../../../../public/img/au-img2.png');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-
 .au-gallery .gallery-item:nth-child(4) {
     width: 212px;
     height: 212px;
     position: absolute;
     top: 259px;
     left: 40px;
-    border-radius: 40px 10px;   
+    border-radius: 40px 10px;
 }
-.au-gallery .gallery-item:nth-child(4) .gallery-img {
-    background-image: url('../../../../../../public/img/au-img4.png');
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 100%;
-}
-
-
 </style>
+
+<script setup>
+import { ref } from 'vue';
+let imagesList = ref([
+    '/img/about-us/au-img1.jpg',
+    '/img/about-us/au-img2.png',
+    '/img/about-us/au-img3.jpg',
+    '/img/about-us/au-img4.png',
+]);
+</script>
