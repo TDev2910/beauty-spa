@@ -1,24 +1,25 @@
 /* CSS Frontend Tổng */
-@import './frontend/abstracts/_animations.css';
-@import './frontend/components/_buttons.css';
-@import './frontend/components/_modals.css';
-@import './frontend/layouts/_navbar.css';
-@import './frontend/layouts/_footer.css';
+@import "./frontend/abstracts/_animations.css";
+@import "./frontend/components/_buttons.css";
+@import "./frontend/components/_modals.css";
+@import "./frontend/layouts/_navbar.css";
+@import "./frontend/layouts/_footer.css";
 
 :root {
     --primary-color: #a21d44;
-    --secondary-color: #D4AF37;
+    --primary-color-200: hsl(342, 65%, 96%);
+    --secondary-color: #d4af37;
     --dark-color-600: hsl(214, 91%, 26%);
     --dark-color-400: hsl(214, 91%, 60%);
     --text-color: #333333;
-    --bg-light: #F9F9F9;
-    --font-family: 'Montserrat', sans-serif;
+    --bg-light: #f9f9f9;
+    --font-family: "Montserrat", sans-serif;
 
     --fs-300: 0.8125rem;
     --fs-400: 0.875rem;
     --fs-500: 0.9375rem;
     --fs-600: 1rem;
-    --fs-700: 1.5rem;
+    --fs-700: 1.25rem;
     --fs-800: 1.875rem;
     --fs-900: 2.5rem;
     --fs-1000: 3.5rem;
@@ -26,6 +27,7 @@
     --fw-regular: 400;
     --fw-semi-bold: 500;
     --fw-bold: 700;
+    --fw-extreme-bold: 900;
 
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-900);
@@ -52,7 +54,7 @@ body {
     min-height: 100dvh;
 }
 
-.layout{
+.layout {
     min-height: 100vh;
     min-height: 100dvh;
     display: grid;
@@ -60,12 +62,65 @@ body {
     grid-template-columns: minmax(0, 1fr);
 }
 
-.container{
+.custom-container{
+    --max-width: 1200px;
+    --container-padding: 1rem;
+
+    width: min(var(--max-width), 100% - 2 * var(--container-padding));
     margin-inline:auto;
+}
+
+.container {
+    margin-inline: auto;
+}
+
+.even-columns{
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 50em) {
+  .even-columns {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+/* flow spacing */
+.flow > :not(:first-child) {
+  margin-top: var(--flow-spacer, 2em);
+}
+
+/* set background image */
+.set-bg-img {
+    background-repeat: no-repeat!important;
+    background-position: center center;
 }
 
 /* animation class */
 .text-blink {
-  /* Gọi tên kịch bản, chạy trong 1 giây, tốc độ đều, lặp lại vô hạn */
-  animation: blink-effect 1s linear infinite; 
+    /* Gọi tên kịch bản, chạy trong 1 giây, tốc độ đều, lặp lại vô hạn */
+    animation: blink-effect 1s linear infinite;
 }
+
+/* Thẻ cha: Giới hạn khung nhìn và cắt bỏ phần thừa */
+.marquee {
+    background-color: var(--dark-color-600);
+    padding: 10px 0;
+}
+.marquee .container {
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa container ra giữa màn hình */
+    overflow: hidden; /* Cực kỳ quan trọng: Giấu chữ khi nó chạy ra khỏi giới hạn container */
+    white-space: nowrap; /* Ép chữ nằm trên 1 dòng */
+}
+
+/* Thẻ con: Kích hoạt hiệu ứng */
+.text-marquee {
+    display: inline-block;
+    color: white;
+    font-size: var(--fw-bold);
+    /* Chạy hiệu ứng trong 10 giây, tốc độ đều (linear), lặp vô hạn (infinite) */
+    animation: scroll-left 30s linear infinite;
+}
+    

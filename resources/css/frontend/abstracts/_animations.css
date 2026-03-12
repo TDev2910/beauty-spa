@@ -19,3 +19,12 @@
   50% { opacity: 0; }  /* Giữa chừng: Chữ hoàn toàn tàng hình */
   100% { opacity: 1; } /* Kết thúc: Chữ hiện rõ lại */
 }
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Bắt đầu từ tít ngoài cùng mép phải */
+    }
+    100% {
+        transform: translateX(-100%); /* Chạy mất hút ra khỏi mép trái */
+    }
+}
