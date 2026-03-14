@@ -25,7 +25,7 @@
                                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                             </template>
                             <div class="ce-video-title | set-bg-img"
-                                :style="$getBgStyle('/img/customer-experience/ce-video-title-bg.png')" u>
+                                :style="$getBgStyle('/img/customer-experience/ce-video-title-bg.png')">
                                 <h3>{{ video.title }}</h3>
                             </div>
                         </div>

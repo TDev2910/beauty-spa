@@ -24,7 +24,6 @@ const isPopupOpen = ref(false);
                 <a href="#trai-nghiem">Trải Nghiệm Khách Hàng</a>
                 <a href="#cam-ket">Liên Hệ</a>
             </nav>
-
             <!-- Call to action -->
             <button class="btn-nhan-uu-dai" @click="isPopupOpen = true">Nhận Ưu Đãi</button>
         </div>

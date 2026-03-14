@@ -1,5 +1,4 @@
 <template>
-    <header>
         <div class="top-header">
             <div class="th-bg"></div>
             <div class="container">
@@ -37,11 +36,12 @@
             </div>
         </div>
         <Navbar />
-    </header>
 
 </template>
 
 <style scoped>
+
+
 .top-header {
     height: 74px;
     position: relative;
