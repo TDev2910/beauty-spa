@@ -2,8 +2,8 @@
     <div class="about-us-section">
         <div class="custom-container">
             <div class="au-heading | flow" style="--flow-spacer:0.125rem">
-                <h3 class="au-title">THẨM MỸ VIỆN</h3>
-                <h2 class="au-subtitle">SEOUL CENTER</h2>
+                <h3 class="au-title | text-safe">THẨM MỸ VIỆN</h3>
+                <h2 class="au-subtitle | text-safe">SEOUL CENTER</h2>
             </div>
             <div class="au-content | even-columns">
                 <div class="au-content-left | flow" style="--flow-spacer:1em">
@@ -52,17 +52,17 @@
 .au-heading {
     text-align: center;
     margin-bottom: 0.5rem;
+    font-weight: var(--fw-extreme-bold);
 }
 
 .au-heading>* {
-    font-weight: var(--fw-extreme-bold);
     margin: 0;
 }
 
 .au-heading .au-title {
     font-size: var(--fs-primary-heading);
     line-height: 1.2;
-    background: linear-gradient(rgb(10, 103, 233), rgb(223, 24, 85));
+    background: var(--linear-gradient-color);
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
