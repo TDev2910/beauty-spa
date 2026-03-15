@@ -2,13 +2,13 @@
     <div class="service-section">
         <div class="custom-container">
             <div class="ss-heading | flow" style="--flow-spacer:.5rem">
-                <div class="ss-img"></div>
+                <div class="ss-img | set-bg-img" :style="$getBgStyle(serviceHeadingImage)"></div>
                 <div class="ss-subtitle">
                     <h3>Trợ Giá Ưu Đãi Tháng ➤ Click Vào Để Xem Chi Tiết</h3>
                 </div>
             </div>
             <div class="ss-list">
-                <template v-for="(image,i) in imagesList">
+                <template v-for="(image,i) in serviceImagesList">
                     <div class="ss-item">
                         <div class="ss-item-img | set-bg-img" :style="$getBgStyle(image)"></div>
                     </div>
@@ -28,7 +28,6 @@
 }
 
 .ss-heading .ss-img {
-    background: url('../../../../../../public/img/service/service-heading.png') no-repeat center center;
     background-size: contain;
     width: 70%;
     aspect-ratio: 5/1;
@@ -60,7 +59,8 @@
 <script setup>
 import { ref } from 'vue';
 
-let imagesList = ref([
+const serviceHeadingImage = ref('/img/service/service-heading.png');
+const serviceImagesList = ref([
     '/img/service/service-item1.png',
     '/img/service/service-item2.png',
     '/img/service/service-item3.png',
