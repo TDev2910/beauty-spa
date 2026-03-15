@@ -17,7 +17,6 @@
 <style scoped>
 .guarantee-section {
     padding-top: 2rem;
-    background: var(--primary-color-200);
     position: relative;
     height: 1000px;
 }

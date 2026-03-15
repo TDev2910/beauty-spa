@@ -22,9 +22,7 @@
 @reference "tailwindcss";
 
 .service-section {
-    padding-top: 3rem;
-    background-color: var(--primary-color-200);
-    padding: 1rem 0;
+    padding: 3rem 0 1rem;
 }
 
 .ss-heading .ss-img {
