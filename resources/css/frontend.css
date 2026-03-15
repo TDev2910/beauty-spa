@@ -6,11 +6,31 @@
 @import "./frontend/layouts/_footer.css";
 
 :root {
+    --neutral-color-100: hsl(0, 0%, 100%);
+    --neutral-color-150: hsl(186, 100%, 96%);
+    --neutral-color-200: hsl(210, 14%, 97%);
+    --neutral-color-300: hsl(180, 1%, 87%);
+    --neutral-color-400: hsl(144, 3%, 64%);
+    --neutral-color-500: hsl(213, 12%, 46%);
+    --neutral-color-700: hsl(225, 23%, 17%);
+    --neutral-color-800: hsl(224, 24%, 15%);
+    --neutral-color-900: hsl(240, 2%, 10%);
+
     --primary-color: #a21d44;
     --primary-color-200: hsl(342, 65%, 96%);
     --secondary-color: #d4af37;
     --dark-color-600: hsl(214, 91%, 26%);
     --dark-color-400: hsl(214, 91%, 60%);
+
+    /* linear gradient color */
+    --linear-gradient-color: linear-gradient(
+        rgb(10, 103, 233),
+        rgb(223, 24, 85)
+    );
+    --reverse-linear-gradient-color: linear-gradient(
+        rgb(255, 0, 100),
+        rgb(1, 44, 121)
+    );
     --text-color: #333333;
     --bg-light: #f9f9f9;
     --font-family: "Montserrat", sans-serif;
@@ -20,6 +40,7 @@
     --fs-500: 0.9375rem;
     --fs-600: 1rem;
     --fs-700: 1.25rem;
+    --fs-750: 1.625rem;
     --fs-800: 1.875rem;
     --fs-900: 2.5rem;
     --fs-1000: 3.5rem;
@@ -32,7 +53,7 @@
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-800);
-    --fs-normal-heading: var(--fs-700);
+    --fs-normal-heading: var(--fs-750);
     --fs-table: var(--fs-300);
     --fs-label: var(--fs-500);
     --fs-nav: var(--fs-500);
@@ -57,38 +78,48 @@ body {
 .layout {
     min-height: 100vh;
     min-height: 100dvh;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    grid-template-columns: minmax(0, 1fr);
+    display: flex;
+    flex-direction: column;
 }
 
-.custom-container{
+main {
+    flex: 1;
+}
+
+.custom-container {
     --max-width: 1200px;
     --container-padding: 1rem;
 
     width: min(var(--max-width), 100% - 2 * var(--container-padding));
-    margin-inline:auto;
+    margin-inline: auto;
 }
 
 .container {
     margin-inline: auto;
 }
 
-.even-columns{
+.even-columns {
     display: grid;
     gap: 1rem;
 }
 
 @media (min-width: 50em) {
-  .even-columns {
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-  }
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+}
+/* Utility */
+.text-safe {
+    display: inline-block;
+    width: 100%;
+    word-wrap: break-word; /* Hỗ trợ trình duyệt cũ */
+    overflow-wrap: break-word;
 }
 
 /* flow spacing */
 .flow > :not(:first-child) {
-  margin-top: var(--flow-spacer, 2em);
+    margin-top: var(--flow-spacer, 2em);
 }
 
 /* set background image */
@@ -123,4 +154,3 @@ body {
     /* Chạy hiệu ứng trong 10 giây, tốc độ đều (linear), lặp vô hạn (infinite) */
     animation: scroll-left 30s linear infinite;
 }
-    
