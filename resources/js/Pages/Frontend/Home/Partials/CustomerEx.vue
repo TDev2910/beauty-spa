@@ -67,7 +67,9 @@
 @reference "tailwindcss";
 
 .customer-experience-section {
-    min-height: 2000px;
+    background: var(--primary-color-200);
+    margin-bottom: 0; 
+    min-height: 1000px;
     position: relative;
 }
 
@@ -161,9 +163,9 @@
 }
 
 .ce-video-group .ce-video .ce-video-title {
-    width: calc(100% - 2rem);
-    background-size: cover;
-    border-radius: .75rem;
+    width: 100%;
+    aspect-ratio: 5/1;
+    background-size: contain;
     position: absolute;
     bottom: -3.75rem;
     left: 50%;
