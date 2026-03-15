@@ -4,6 +4,7 @@ import Guarantee from "../Home/Partials/Guarantee.vue";
 import ServiceCategories from "../Home/Partials/ServiceCategories.vue";
 import CustomerExperience from "../../../Components/Frontend/FloatingContact.vue";
 import FloatingContact from "../Home/Partials/CustomerEx.vue";
+import LuckyWheel from "@/Components/Frontend/LuckyWheel.vue";
 const bannerUrl = "/img/banner-seoul-center.png";
 const bannerAlt = "Chương trình tặng Combo PC Fix Seoul Center";
 </script>
@@ -35,9 +36,10 @@ const bannerAlt = "Chương trình tặng Combo PC Fix Seoul Center";
         </form>
     </div>
     <AboutUs />
-    <Guarantee/>
+    <Guarantee />
     <ServiceCategories />
     <FloatingContact />
+    <LuckyWheel />
 </template>
 
 <style scoped>

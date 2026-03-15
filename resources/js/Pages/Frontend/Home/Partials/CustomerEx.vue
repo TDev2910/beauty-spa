@@ -41,7 +41,7 @@
 <style scoped>
 .customer-experience-section {
     background: var(--primary-color-200);
-    margin-bottom: 1rem;
+    margin-bottom: 0; 
     min-height: 1000px;
     position: relative;
 }
@@ -128,10 +128,10 @@
     left: 0;
 }
 
-.ce-video-group .ce-video .ce-video-title{
+.ce-video-group .ce-video .ce-video-title {
     width: 100%;
     aspect-ratio: 5/1;
-    background-size:contain;
+    background-size: contain;
     position: absolute;
     bottom: -4.25rem;
     display: flex;
@@ -139,7 +139,7 @@
     justify-content: center;
 }
 
-.ce-video-group .ce-video .ce-video-title h3{
+.ce-video-group .ce-video .ce-video-title h3 {
     background: var(--linear-gradient-color);
     background-clip: text;
     -webkit-text-fill-color: transparent;
