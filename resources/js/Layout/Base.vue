@@ -4,7 +4,7 @@
         <Header />
 
         <!-- Main content -->
-        <main>
+        <main class="main-content">
             <slot />
         </main>
 
@@ -12,6 +12,12 @@
         <Footer />
     </div>
 </template>
+
+<style scoped>
+.main-content{
+    background: var(--primary-color-200);
+}
+</style>
 
 <script setup>
 import Header from "../Components/Header.vue";

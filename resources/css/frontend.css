@@ -40,6 +40,7 @@
     --fs-500: 0.9375rem;
     --fs-600: 1rem;
     --fs-700: 1.25rem;
+    --fs-750: 1.625rem;
     --fs-800: 1.875rem;
     --fs-900: 2.5rem;
     --fs-1000: 3.5rem;
@@ -52,7 +53,7 @@
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-900);
     --fs-secondary-heading: var(--fs-800);
-    --fs-normal-heading: var(--fs-700);
+    --fs-normal-heading: var(--fs-750);
     --fs-table: var(--fs-300);
     --fs-label: var(--fs-500);
     --fs-nav: var(--fs-500);
@@ -123,7 +124,7 @@ main {
 
 /* set background image */
 .set-bg-img {
-    background-repeat: no-repeat !important;
+    background-repeat: no-repeat!important;
     background-position: center center;
 }
 
