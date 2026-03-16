@@ -14,8 +14,9 @@ import LuckyWheel from "@/Components/Frontend/LuckyWheel.vue";
     <AboutUs />
     <Guarantee />
     <ServiceCategories />
-    <LibraryService />
+    <CustomerExperience />
     <Testimonials />
+    <LibraryService />
     <LuckyWheel />
     <FloatingContact />
 </template>

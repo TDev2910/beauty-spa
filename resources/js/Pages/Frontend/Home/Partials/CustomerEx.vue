@@ -67,9 +67,7 @@
 @reference "tailwindcss";
 
 .customer-experience-section {
-    background: var(--primary-color-200);
-    margin-bottom: 0; 
-    min-height: 1000px;
+    min-height: 2000px;
     position: relative;
 }
 
