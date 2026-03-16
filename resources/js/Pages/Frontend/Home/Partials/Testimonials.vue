@@ -21,9 +21,8 @@
                 <h3 class="bs-title">HOẠT ĐỘNG CHI NHÁNH SEOUL CENTER</h3>
             </div>
             <div class="bs-content">
-                <Carousel :value="branchActivityImages" :numVisible="1" :pt="{
-                    indicator: { class: 'hidden' },
-                }" :showNavigators="false" circular :autoplayInterval="5000">
+                <Carousel :value="branchActivityImages" :numVisible="1" :showIndicators="false" :showNavigators="false"
+                    circular :autoplayInterval="5000">
                     <template #item="slotProps">
                         <div class="bs-item | set-bg-img" :style="$getBgStyle(slotProps.data)"></div>
                     </template>
@@ -54,6 +53,10 @@
 }
 
 /* BRANCH SECTION */
+.branch-section{
+    padding-bottom: 2rem;
+}
+
 .bs-heading .bs-title {
     font-size: var(--fs-primary-heading);
     font-weight: var(--fw-extreme-bold);
@@ -63,13 +66,13 @@
     -webkit-text-fill-color: transparent;
 }
 
-.bs-content{
+.bs-content {
     border: 1px solid var(--dark-color-600);
     border-radius: .75rem;
     overflow: hidden;
 }
 
-.bs-content .bs-item{
+.bs-content .bs-item {
     background-size: cover;
     width: 100%;
     aspect-ratio: 2/1;
