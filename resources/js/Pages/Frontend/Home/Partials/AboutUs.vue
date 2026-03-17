@@ -1,5 +1,5 @@
 <template>
-    <div class="about-us-section">
+    <div id="about-us" class="about-us-section">
         <div class="custom-container">
             <div class="au-heading | flow" style="--flow-spacer:0.125rem">
                 <h3 class="au-title | text-safe">THẨM MỸ VIỆN</h3>

@@ -1,5 +1,5 @@
 <template>
-    <div class="customer-experience-section">
+    <div id="customer-experience" class="customer-experience-section">
         <div class="custom-container">
             <div class="ce-heading">
                 <h2 class="ce-title | text-safe">THƯ VIỆN DỊCH VỤ - SEOUL CENTER</h2>
@@ -7,8 +7,7 @@
             </div>
             <div class="ce-upper-content">
                 <h3 class="ce-content-title">DỊCH VỤ THẨM MỸ LÀN DA</h3>
-                <div class="ce-video-group | set-bg-img"
-                    :style="$getBgStyle('/img/customer-experience/ce-bg-img.png')">
+                <div class="ce-video-group | set-bg-img" :style="$getBgStyle('/img/customer-experience/ce-bg-img.png')">
                     <template v-for="(video, index) in videos">
                         <div class="ce-video">
                             <template v-if="!videos[index].isPlaying">
@@ -34,9 +33,8 @@
             </div>
             <div class="ce-lower-content">
                 <h3 class="ce-content-title">DỊCH VỤ PHUN, XÓA XĂM THẨM MỸ</h3>
-                <div class="ce-video-group | set-bg-img"
-                    :style="$getBgStyle('/img/customer-experience/ce-bg-img.png')">
-                    <template v-for="(video, index) in videos.slice(0,4)">
+                <div class="ce-video-group | set-bg-img" :style="$getBgStyle('/img/customer-experience/ce-bg-img.png')">
+                    <template v-for="(video, index) in videos.slice(0, 4)">
                         <div class="ce-video">
                             <template v-if="!videos[index].isPlaying">
                                 <div class="ce-video-bg | set-bg-img" :style="$getBgStyle(video.backgroundImg)">
@@ -90,7 +88,8 @@
 }
 
 /* ce content */
-.ce-upper-content,.ce-lower-content {
+.ce-upper-content,
+.ce-lower-content {
     min-height: 600px;
     height: auto;
     background-size: cover;
@@ -99,7 +98,7 @@
 
 /* ce upper content */
 .ce-content-title {
-    margin-top:3rem;
+    margin-top: 3rem;
     text-align: center;
     font-size: var(--fs-normal-heading);
     background-image: var(--reverse-linear-gradient-color);
@@ -117,10 +116,11 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.ce-upper-content .ce-video-group{
+.ce-upper-content .ce-video-group {
     @apply grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-22;
 }
-.ce-lower-content .ce-video-group{
+
+.ce-lower-content .ce-video-group {
     @apply grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-22;
 }
 
@@ -173,10 +173,12 @@
     justify-content: center;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-.ce-upper-content .ce-video-title{
+
+.ce-upper-content .ce-video-title {
     aspect-ratio: 6/1;
 }
-.ce-lower-content .ce-video-title{
+
+.ce-lower-content .ce-video-title {
     aspect-ratio: 8/1;
 }
 

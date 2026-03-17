@@ -1,5 +1,5 @@
 <template>
-    <div class="service-section">
+    <div id="services" class="service-section">
         <div class="custom-container">
             <div class="ss-heading | flow" style="--flow-spacer:.5rem">
                 <div class="ss-img | set-bg-img" :style="$getBgStyle(serviceHeadingImage)"></div>

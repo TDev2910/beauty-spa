@@ -60,6 +60,15 @@
     --fs-button: var(--fs-600);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset for sticky navbar (100px) */
+[id] {
+    scroll-margin-top: 100px;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;

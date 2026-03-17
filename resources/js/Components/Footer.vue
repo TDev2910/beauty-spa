@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer-wrapper">
+    <footer id="footer" class="footer-wrapper">
         <div class="container">
             <div class="footer-grid">
                 <!-- Cột 1: Thông tin công ty & Logo -->

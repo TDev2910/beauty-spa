@@ -1,5 +1,5 @@
 <template>
-    <div class="guarantee-section">
+    <div id="cam-ket" class="guarantee-section">
         <div class="custom-container">
             <div class="gs-heading">
                 <div class="gs-img | set-bg-img" :style="$getBgStyle('/img/guarantee/gs-heading.png')"></div>
