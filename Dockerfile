@@ -42,4 +42,4 @@ ENV APP_DEBUG=false
 EXPOSE 8000
 
 # Start FrankenPHP
-CMD ["frankenphp", "php-server", "--listen", ":8000"]
+CMD ["frankenphp", "php-server", "--listen", ":8000", "--root", "public"]
