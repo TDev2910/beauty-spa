@@ -3,15 +3,7 @@
     "framework": null,
     "functions": {
         "api/index.php": {
-            "runtime": "vercel-php@0.10.0",
-            "includeFiles": [
-                "vendor/**",
-                "bootstrap/**",
-                "app/**",
-                "config/**",
-                "routes/**",
-                "resources/views/**"
-            ]
+            "runtime": "vercel-php@0.7.1"
         }
     },
     "routes": [
@@ -28,12 +20,8 @@
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_KEY": "base64:xJ3Nhko4hNRN/KOaFOM6cVx2oyRiVc3mvbqcuJkxG5I=",
-        "APP_URL": "https://beauty-spa-tdev2910s-projects.vercel.app",
-        "ASSET_URL": "https://beauty-spa-tdev2910s-projects.vercel.app",
-        "VITE_APP_URL": "https://beauty-spa-tdev2910s-projects.vercel.app",
         "APP_CONFIG_CACHE": "/tmp/config.php",
         "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_STORE": "array",
         "CACHE_DRIVER": "array",

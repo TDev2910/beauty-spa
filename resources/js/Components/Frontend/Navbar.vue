@@ -17,14 +17,13 @@ const isPopupOpen = ref(false);
 
             <!-- Navigation Links -->
             <nav class="nav-links">
-                <a href="#ve-chung-toi">Về Chúng Tôi</a>
+                <a href="#about-us">Về Chúng Tôi</a>
                 <a href="#ve-chung-toi">Chương Trình</a>
-                <a href="#dich-vu">Dịch Vụ</a>
-                <a href="#ve-chung-toi">Cam kết</a>
-                <a href="#trai-nghiem">Trải Nghiệm Khách Hàng</a>
-                <a href="#cam-ket">Liên Hệ</a>
+                <a href="#services">Dịch Vụ</a>
+                <a href="#cam-ket">Cam kết</a>
+                <a href="#customer-experience">Trải Nghiệm Khách Hàng</a>
+                <a href="#footer">Liên Hệ</a>
             </nav>
-
             <!-- Call to action -->
             <button class="btn-nhan-uu-dai" @click="isPopupOpen = true">Nhận Ưu Đãi</button>
         </div>

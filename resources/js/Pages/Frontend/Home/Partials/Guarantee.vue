@@ -1,5 +1,5 @@
 <template>
-    <div class="guarantee-section">
+    <div id="cam-ket" class="guarantee-section">
         <div class="custom-container">
             <div class="gs-heading">
                 <div class="gs-img | set-bg-img" :style="$getBgStyle('/img/guarantee/gs-heading.png')"></div>
@@ -17,7 +17,6 @@
 <style scoped>
 .guarantee-section {
     padding-top: 2rem;
-    background: var(--primary-color-200);
     position: relative;
     height: 1000px;
 }
