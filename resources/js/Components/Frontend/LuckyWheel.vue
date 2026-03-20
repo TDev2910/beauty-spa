@@ -1,35 +1,70 @@
 <script setup>
 import { ref, computed } from 'vue';
+import Swal from 'sweetalert2';
 
 const isSpinning = ref(false);
 const rotation = ref(0);
 const prizeWinner = ref(null);
 
-// Số lượng múi trên ảnh vòng quay
-const segmentCount = 6;
+const prizeLabels = [
+    "VOUCHER GIẢM 200K TIỀN MẶT",
+    "VOUCHER 1 TRIỆU",
+    "VOUCHER MUA 1 TẶNG 1",
+    "VOUCHER GIẢM 200K TIỀN MẶT",
+    "VOUCHER 1 TRIỆU",
+    "VOUCHER MUA 1 TẶNG 1"
+];
+
+const segmentCount = prizeLabels.length;
 const sectorAngle = computed(() => 360 / segmentCount);
 
 const spin = () => {
     if (isSpinning.value) return;
 
     isSpinning.value = true;
-    prizeWinner.value = null;
+    prizeWinner.value = null; // Reset data cũ về null
 
-    // Quay ít nhất 5-10 vòng để tạo hiệu ứng
-    const extraRounds = 10 + Math.floor(Math.random() * 5);
-    // Chọn ngẫu nhiên một ô
+    const extraRounds = 5 + Math.floor(Math.random() * 5);
     const randomSector = Math.floor(Math.random() * segmentCount);
 
-    // Tính toán góc quay mới
-    const targetRotation = rotation.value + (extraRounds * 360) + (randomSector * sectorAngle.value);
+    const targetRotation = rotation.value
+        + (extraRounds * 360)
+        + (randomSector * sectorAngle.value)
+        - (sectorAngle.value / 2);
 
     rotation.value = targetRotation;
 
-    // Thời gian transition là 5s
-    setTimeout(() => {
-        isSpinning.value = false;
-        console.log("Kết quả: ", randomSector);
-    }, 5000);
+    const actualIndex = (segmentCount - (randomSector % segmentCount)) % segmentCount;
+    prizeWinner.value = prizeLabels[actualIndex];
+};
+
+const onWheelStop = () => {
+    isSpinning.value = false;
+
+    // Hiển thị popup nhập thông tin
+    Swal.fire({
+        title: '<span style="color: #ec4899; font-size: 24px;">ĐỂ LẠI SỐ ĐIỆN THOẠI!</span>',
+        html: `
+            <p style="font-weight: bold; margin-bottom: 15px;">NHẬN CƠ HỘI NÂNG TẦM NHAN SẮC!</p>
+            <p style="color: red; font-weight: bold; font-size: 20px;">" ${prizeWinner.value} "</p>
+            <input type="text" id="customer-name" class="swal2-input" placeholder="Họ và tên">
+            <input type="tel" id="customer-phone" class="swal2-input" placeholder="Số điện thoại">
+        `,
+        confirmButtonText: 'NHẬN VOUCHER',
+        confirmButtonColor: '#be185d',
+        preConfirm: () => {
+            const name = Swal.getPopup().querySelector('#customer-name').value;
+            const phone = Swal.getPopup().querySelector('#customer-phone').value;
+            if (!name || !phone) {
+                Swal.showValidationMessage('Vui lòng nhập đầy đủ họ tên và số điện thoại!');
+            }
+            return { name, phone };
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            console.log("Dữ liệu gửi đi:", result.value);
+        }
+    });
 };
 </script>
 
@@ -62,13 +97,11 @@ const spin = () => {
                     <div class="wheel-container">
                         <div class="wheel-outer-glow"></div>
                         <div class="wheel-axis">
-                            <!-- Khối xoay: Cố định tâm tuyệt đối -->
-                            <div class="wheel-main" :style="{ transform: `rotate(${rotation}deg)` }">
+                            <div class="wheel-main" :style="{ transform: `rotate(${rotation}deg)` }"
+                                @transitionend="onWheelStop">
                                 <img src="https://w.ladicdn.com/s700x700/5977f59d1abc544991d43c5b/vong-quay-20251029070716-mxpe3.png"
                                     class="img-wheel-main" alt="Vòng quay">
                             </div>
-
-                            <!-- Nút nhấn Start cố định ở giữa -->
                             <button class="spin-button-new" @click="spin" :disabled="isSpinning">
                                 <img src="https://w.ladicdn.com/source/spin-btn1.svg" class="img-spin-btn" alt="Start">
                             </button>
@@ -181,7 +214,7 @@ const spin = () => {
     top: -10px;
     left: -220px;
 }
-    
+
 .wheel-container {
     position: relative;
     width: 450px;
