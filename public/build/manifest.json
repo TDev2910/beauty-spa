@@ -19,10 +19,6 @@
     "file": "assets/primeicons-C6QP2o4f.woff2",
     "src": "node_modules/primeicons/fonts/primeicons.woff2"
   },
-  "public/img/service/service-heading.png": {
-    "file": "assets/service-heading-BF5GrGG-.png",
-    "src": "public/img/service/service-heading.png"
-  },
   "public/img/th-bg-img.png": {
     "file": "assets/th-bg-img-If7SdsrA.png",
     "src": "public/img/th-bg-img.png"
@@ -32,7 +28,7 @@
     "src": "public/img/top-header-img1.jpeg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-QjC0GlEu.css",
+    "file": "assets/app-DdvdcUT1.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -41,17 +37,16 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-DBxfCsUq.js",
+    "file": "assets/app-CRf8P-79.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-Dv4MzQq7.css",
-      "assets/app-QjC0GlEu.css"
+      "assets/app-DU2k4ZJU.css",
+      "assets/app-DdvdcUT1.css"
     ],
     "assets": [
       "assets/top-header-img1-Bue3AYZg.jpeg",
-      "assets/service-heading-BF5GrGG-.png",
       "assets/primeicons-DMOk5skT.eot",
       "assets/primeicons-C6QP2o4f.woff2",
       "assets/primeicons-WjwUDZjB.woff",
