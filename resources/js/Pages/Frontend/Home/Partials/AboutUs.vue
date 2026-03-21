@@ -80,7 +80,6 @@
 
 .au-content-left .au-text {
     margin-top: 1rem;
-    font-size: var(--fs-label);
     font-weight: var(--fw-bold);
     color: var(--dark-color-600);
 }
