@@ -52,7 +52,7 @@
 
     --fs-body: var(--fs-400);
     --fs-primary-heading: var(--fs-800);
-    --fs-secondary-heading: var(--fs-750);
+    --fs-secondary-heading: var(--fs-700);
     --fs-nav: var(--fs-400);
     --fs-label: var(--fs-400);
     --fs-button: var(--fs-400);
@@ -61,8 +61,7 @@
 @media (min-width: 48em) {
     :root {
         --fs-body: var(--fs-500);
-        --fs-primary-heading: var(--fs-700);
-        --fs-secondary-heading: var(--fs-700);
+        --fs-primary-heading: var(--fs-900);
         --fs-label: var(--fs-600);
         --fs-button: var(--fs-500);
     }
@@ -77,7 +76,7 @@
 @media (min-width: 80em) {
     :root {
         --fs-body: var(--fs-600);
-        --fs-primary-heading: var(--fs-900);
+        --fs-primary-heading: var(--fs-1000);
         --fs-secondary-heading: var(--fs-800);
         --fs-label: var(--fs-750);
         --fs-nav: var(--fs-600);
@@ -138,13 +137,23 @@ main {
     gap: 1rem;
 }
 
-@media (min-width: 50em) {
+@media (min-width: 64em) {
     .even-columns {
         grid-auto-flow: column;
         grid-auto-columns: 1fr;
     }
 }
 /* Utility */
+@media (max-width: 64em) {
+  .text-center-only-md {
+    text-align: center;
+  }
+
+  .text-center-only-md > *{
+    margin-inline: auto;
+  }
+}
+
 .text-safe {
     display: inline-block;
     width: 100%;

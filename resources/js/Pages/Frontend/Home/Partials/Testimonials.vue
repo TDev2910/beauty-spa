@@ -39,7 +39,7 @@
 }
 
 .ts-heading .ts-title {
-    font-size: var(--fs-secondary-heading);
+    font-size: var(--fs-primary-heading);
     color: var(--primary-color);
     text-align: center;
 }
@@ -52,8 +52,16 @@
     border: 1px solid var(--neutral-color-100);
 }
 
+@media(max-width: 48em) {
+    .ts-content .ts-item {
+        background-size: contain;
+        aspect-ratio: 4/5;
+        border: none;
+    }
+}
+
 /* BRANCH SECTION */
-.branch-section{
+.branch-section {
     padding-bottom: 2rem;
 }
 
@@ -91,22 +99,12 @@ const testimonialsList = ref([
 ]);
 const responsiveOptions = ref([
     {
-        breakpoint: '1400px',
+        breakpoint: '1024px',
         numVisible: 2,
-        numScroll: 1
+        numScroll: 2
     },
     {
-        breakpoint: '1199px',
-        numVisible: 3,
-        numScroll: 1
-    },
-    {
-        breakpoint: '767px',
-        numVisible: 2,
-        numScroll: 1
-    },
-    {
-        breakpoint: '575px',
+        breakpoint: '768px',
         numVisible: 1,
         numScroll: 1
     }

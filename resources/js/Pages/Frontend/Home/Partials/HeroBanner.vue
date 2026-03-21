@@ -3,26 +3,28 @@
         <img :src="bannerUrl" :alt="bannerAlt" class="banner-image" loading="lazy" />
     </div>
     <div class="registration-form-box">
-        <h2 class="reg-title">MUA 1 DỊCH VỤ TẶNG 1 COMBO TỨ QUÝ</h2>
-        <form @submit.prevent>
-            <div class="form-row">
-                <input type="text" placeholder="Họ và Tên">
-                <input type="tel" placeholder="Số điện thoại">
-            </div>
-            <div class="form-row">
-                <select class="full-width">
-                    <option value="" disabled selected>Chọn dịch vụ bạn quan tâm</option>
-                    <option value="cham-soc-da">Chăm sóc da chuyên sâu</option>
-                    <option value="phun-xam">Phun xăm thẩm mỹ</option>
-                    <option value="tri-mun">Điều trị mụn/thâm</option>
-                    <option value="tri-nam">Điều trị nám/tàn nhang</option>
-                    <option value="khac">Dịch vụ khác...</option>
-                </select>
-            </div>
-            <div class="form-button">
-                <button type="submit">NHẬN ƯU ĐÃI</button>
-            </div>
-        </form>
+        <div class="custom-container">
+            <h2 class="reg-title">MUA 1 DỊCH VỤ TẶNG 1 COMBO TỨ QUÝ</h2>
+            <form @submit.prevent>
+                <div class="form-row | even-columns">
+                    <input type="text" placeholder="Họ và Tên">
+                    <input type="tel" placeholder="Số điện thoại">
+                </div>
+                <div class="form-row">
+                    <select class="full-width">
+                        <option value="" disabled selected>Chọn dịch vụ bạn quan tâm</option>
+                        <option value="cham-soc-da">Chăm sóc da chuyên sâu</option>
+                        <option value="phun-xam">Phun xăm thẩm mỹ</option>
+                        <option value="tri-mun">Điều trị mụn/thâm</option>
+                        <option value="tri-nam">Điều trị nám/tàn nhang</option>
+                        <option value="khac">Dịch vụ khác...</option>
+                    </select>
+                </div>
+                <div class="form-button">
+                    <button type="submit">NHẬN ƯU ĐÃI</button>
+                </div>
+            </form>
+        </div>
     </div>
 </template>
 
@@ -44,9 +46,9 @@
 
 /* Reg Box */
 .registration-form-box {
-    background: #a21d44;
+    background: var(--primary-color);
     padding: 35px 25px;
-    color: #fff;
+    color: var(--neutral-color-100);
     width: 100%;
     margin: 0 auto;
     display: flex;
