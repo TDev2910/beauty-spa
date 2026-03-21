@@ -43,7 +43,7 @@
     --fs-750: 1.625rem;
     --fs-800: 1.875rem;
     --fs-900: 2.5rem;
-    --fs-1000: 3.5rem;
+    --fs-1000: 3.25rem;
 
     --fw-regular: 400;
     --fw-semi-bold: 500;
@@ -51,13 +51,38 @@
     --fw-extreme-bold: 900;
 
     --fs-body: var(--fs-400);
-    --fs-primary-heading: var(--fs-900);
-    --fs-secondary-heading: var(--fs-800);
-    --fs-normal-heading: var(--fs-750);
-    --fs-table: var(--fs-300);
-    --fs-label: var(--fs-500);
-    --fs-nav: var(--fs-500);
-    --fs-button: var(--fs-600);
+    --fs-primary-heading: var(--fs-800);
+    --fs-secondary-heading: var(--fs-750);
+    --fs-nav: var(--fs-400);
+    --fs-label: var(--fs-400);
+    --fs-button: var(--fs-400);
+}
+
+@media (min-width: 48em) {
+    :root {
+        --fs-body: var(--fs-500);
+        --fs-primary-heading: var(--fs-700);
+        --fs-secondary-heading: var(--fs-700);
+        --fs-label: var(--fs-600);
+        --fs-button: var(--fs-500);
+    }
+}
+@media (min-width: 64em) {
+    :root {
+        --fs-label: var(--fs-700);
+        --fs-button: var(--fs-600);
+        --fs-nav: var(--fs-300);
+    }
+}
+@media (min-width: 80em) {
+    :root {
+        --fs-body: var(--fs-600);
+        --fs-primary-heading: var(--fs-900);
+        --fs-secondary-heading: var(--fs-800);
+        --fs-label: var(--fs-750);
+        --fs-nav: var(--fs-600);
+        --fs-button: var(--fs-700);
+    }
 }
 
 html {
@@ -77,6 +102,7 @@ html {
 
 body {
     font-family: var(--font-family);
+    font-size: var(--fs-body);
     color: var(--text-color);
     background-color: #fff;
     line-height: 1.6;
@@ -133,7 +159,7 @@ main {
 
 /* set background image */
 .set-bg-img {
-    background-repeat: no-repeat!important;
+    background-repeat: no-repeat !important;
     background-position: center center;
 }
 
@@ -148,7 +174,7 @@ main {
     background-color: var(--dark-color-600);
     padding: 10px 0;
 }
-.marquee .container {
+.marquee .custom-container {
     max-width: 1200px; /* Giới hạn chiều rộng tối đa */
     margin: 0 auto; /* Căn giữa container ra giữa màn hình */
     overflow: hidden; /* Cực kỳ quan trọng: Giấu chữ khi nó chạy ra khỏi giới hạn container */

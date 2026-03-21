@@ -1,37 +1,60 @@
 /* Navbar / Header Specific Layout */
-
-
 .navbar-wrapper {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
-    background: #a21d44;
+    background: var(--primary-color);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.navbar-wrapper .container {
-    max-width: 1200px;
-    margin: 0 auto;
+.nav-content {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    padding: 10px 20px;
-    gap: 40px; 
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 0.5em;
 }
 
-.nav-links {
+.nav-logo {
+    height: 60px;
+    cursor: pointer;
     display: flex;
-    gap: 30px; 
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 550;
-    font-size: 16px; 
-    white-space: nowrap; 
-    transition: 0.3s;
+.nav-logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
+.nav-menu {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    cursor: pointer;
+    display: none;
+}
+
+.nav-menu a {
+    color: var(--neutral-color-100);
+    font-size: var(--fs-nav);
+}
+
+.nav-btn {
+    font-size: var(--fs-button);
+    white-space: nowrap;
+}
+
+@media(min-width: 64em) {
+    .nav-content {
+        gap: 1rem;
+        justify-content: space-evenly;
+    }
+
+    .nav-menu {
+        display: flex;
+    }
+}
 

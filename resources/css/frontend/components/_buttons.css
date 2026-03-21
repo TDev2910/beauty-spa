@@ -1,27 +1,26 @@
 /* Global Buttons */
 .btn-nhan-uu-dai {
-    margin-left: auto;
     background: transparent;
-    color: #ffffff;
-    border: 1px solid #ffffff;
-    padding: 8px 24px;
-    border-radius: 30px;
-    font-size: 16px;
+    color: var(--neutral-color-100);
+    border: 1px solid var(--neutral-color-100);
+    padding: 0.5rem;
+    border-radius: 1.5rem;
+    font-size: var(--fs-button);
     font-weight: 700;
     cursor: pointer;
-    width: 200px;
+    min-width: 160px;
     animation: rung-lac 1.2s infinite ease-in-out;
     transition: all 0.3s ease;
 }
 
 .btn-nhan-uu-dai:hover {
-    background: #ffffff;
-    color: #a21d44;
+    background: var(--neutral-color-100);
+    color: var(--primary-color);
 }
 
 .btn-submit {
-    background: #a21d44;
-    color: #fff;
+    background: var(--primary-color);
+    color: var(--neutral-color-100);
     border: none;
     padding: 12px 20px;
     width: 100%;
@@ -33,4 +32,29 @@
 
 .btn-submit:hover {
     background: #8b183a;
+}
+
+/* toggle mobile menu button */
+.mobile-menu-btn {
+    display: flex;
+    align-items: center; /* Căn giữa icon bên trong nếu có */
+    justify-content: center;
+    background: transparent !important;
+    border: 1px solid var(--neutral-color-100) !important;
+    color: var(--neutral-color-100) !important;
+    transition: all 0.3s ease; /* Thêm độ mượt khi hover */
+}
+
+.mobile-menu-btn:hover {
+    background: var(--neutral-color-100) !important;
+    color: var(--primary-color) !important;
+    /* Thay vì border: none, hãy làm cho viền tiệp màu nền để không bị giật 1px */
+    border-color: var(--neutral-color-100);
+}
+
+/* Màn hình từ Laptop trở lên (64em = 1024px) thì ẩn nút */
+@media (min-width: 64em) {
+    .mobile-menu-btn {
+        display: none !important;
+    }
 }
