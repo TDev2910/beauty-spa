@@ -34,6 +34,22 @@
     background: #8b183a;
 }
 
+/* close button */
+.close-btn{
+    background: var(--primary-color) !important;
+    color: var(--neutral-color-100) !important;
+    border: none !important;
+}
+.close-btn[data-type="inverted"]{
+    background: transparent !important;
+    color: var(--primary-color) !important;
+}
+.close-btn[data-type="inverted"]:hover{
+    background: var(--primary-color) !important;
+    color: var(--neutral-color-100) !important;
+    transition: .2s ease-in;
+}
+
 /* toggle mobile menu button */
 .mobile-menu-btn {
     display: flex;

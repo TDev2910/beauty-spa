@@ -21,7 +21,7 @@
     height: 1000px;
 }
 
-.guarantee-section .custom-container >* {
+.guarantee-section .custom-container>* {
     margin-inline: auto;
 }
 
@@ -44,15 +44,21 @@
     width: 581px;
     height: 169px;
     position: absolute;
-    top:500px;
+    top: 500px;
     left: 50%;
     transform: translateX(-50%);
 }
 
 .guarantee-section .gs-content {
     margin-top: 2.5rem;
-    width: 947px;
-    height: 300px;
+    width: 100%;
+    aspect-ratio: 3/1;
+    margin-inline: auto;
+}
+@media(min-width: 64em) {
+    .guarantee-section .gs-content {
+        width: 80%;
+    }
 }
 </style>
 

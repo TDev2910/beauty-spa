@@ -29,11 +29,10 @@
         <!-- Mobile nav sidebar (max-width: 64em)-->
         <Drawer v-model:visible="visibleSidebar">
             <template #container="{ closeCallback }">
-                <div class="sidebar | flex flex-col h-full p-4">
-                    <div class="flex items-center justify-end px-6 pt-4 shrink-0">
-                        <span>
-                            <Button type="button" @click="closeCallback" icon="pi pi-times" rounded></Button>
-                        </span>
+                <div class="sidebar | flex flex-col gap-3 h-full p-4">
+                    <div class="flex items-center justify-end px-6 py-4 shrink-0">
+                        <Button data-type="inverted" class="close-btn" type="button" @click="closeCallback"
+                            icon="pi pi-times" rounded></Button>
                     </div>
                     <div class="flex-1 | overflow-y-auto">
                         <ul class="sidebar-menu | list-none p-4 m-0 h-full">
@@ -91,9 +90,11 @@
     gap: .25rem;
 }
 
-.sidebar-menu li{
+.sidebar-menu li {
     padding: .75em 1em;
+    cursor: pointer;
 }
+
 .sidebar-menu li:hover {
     background: var(--primary-color-200);
 }

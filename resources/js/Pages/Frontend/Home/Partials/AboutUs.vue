@@ -6,7 +6,7 @@
                 <h2 class="au-subtitle | text-safe">SEOUL CENTER</h2>
             </div>
             <div class="au-content | even-columns">
-                <div class="au-content-left | flow" style="--flow-spacer:1em">
+                <div class="au-content-left | text-center-only-md flow" style="--flow-spacer:1em">
                     <p class="au-text">
                         Hệ thống Thẩm Mỹ Seoul Center là thương hiệu uy tín, chất lượng với nhiều chi nhánh trong và
                         ngoài
@@ -29,7 +29,7 @@
                         lượng, áp dụng thành công cho hàng triệu khách hàng.
                     </p>
                 </div>
-                <div class="au-content-right">
+                <div class="au-content-right | text-center-only-md">
                     <div class="au-gallery">
                         <template v-for="(image, i) in imagesList">
                             <div class="gallery-item">

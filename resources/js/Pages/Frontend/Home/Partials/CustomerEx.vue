@@ -100,7 +100,7 @@
 .ce-content-title {
     margin-top: 3rem;
     text-align: center;
-    font-size: var(--fs-normal-heading);
+    font-size: var(--fs-secondary-heading);
     background-image: var(--reverse-linear-gradient-color);
     color: var(--neutral-color-100);
     padding: .5rem .25rem .5rem .25rem;
