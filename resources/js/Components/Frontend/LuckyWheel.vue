@@ -70,41 +70,41 @@ const onWheelStop = () => {
 
 <template>
     <section class="lucky-wheel-section">
+        <div class="banner-img | set-bg-img" :style="$getBgStyle('/img/lucky-wheel/banner-bg.png')"></div>
         <div class="banner-outer">
-            <img src="https://w.ladicdn.com/s1440x708/5977f59d1abc544991d43c5b/1-20251029072307-ajvgl.png"
-                class="banner-bg" alt="Banner Background">
-
-            <div class="container banner-content">
-                <div class="section-header">
+            <div class="custom-container">
+                <div class="banner-header">
                     <h3 class="main-title">
                         AI ĐÓ VỪA TRÚNG LIỆU TRÌNH LÀM ĐẸP MIỄN PHÍ... <br>
                         CÒN BẠN THÌ SAO?
                     </h3>
                 </div>
-
-                <div class="branding-box" @click="spin">
-                    <div class="branding-container">
-                        <img src="https://w.ladicdn.com/s900x650/5977f59d1abc544991d43c5b/titlee-20251029071120-imb84.png"
-                            class="img-uudai" alt="Ưu đãi">
-                        <div class="btn-quay-ngay-image-overlay">
-                            <img src="https://w.ladicdn.com/s650x350/5977f59d1abc544991d43c5b/group-1-20251029071120-lwiv6.png"
-                                style="margin-bottom: 30px;margin-left: 35px;" class="img-btn-quay" alt="Quay ngay">
+                <div class="banner-content">
+                    <div class="branding-box" @click="spin">
+                        <div class="branding-container">
+                            <img src="https://w.ladicdn.com/s900x650/5977f59d1abc544991d43c5b/titlee-20251029071120-imb84.png"
+                                class="img-uudai" alt="Ưu đãi">
+                            <div class="btn-quay-ngay-image-overlay">
+                                <img src="https://w.ladicdn.com/s650x350/5977f59d1abc544991d43c5b/group-1-20251029071120-lwiv6.png"
+                                    style="margin-bottom: 30px;margin-left: 35px;" class="img-btn-quay" alt="Quay ngay">
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="wheel-box">
-                    <div class="wheel-container">
-                        <div class="wheel-outer-glow"></div>
-                        <div class="wheel-axis">
-                            <div class="wheel-main" :style="{ transform: `rotate(${rotation}deg)` }"
-                                @transitionend="onWheelStop">
-                                <img src="https://w.ladicdn.com/s700x700/5977f59d1abc544991d43c5b/vong-quay-20251029070716-mxpe3.png"
-                                    class="img-wheel-main" alt="Vòng quay">
+                    <div class="wheel-box">
+                        <div class="wheel-container">
+                            <div class="wheel-outer-glow"></div>
+                            <div class="wheel-axis">
+                                <div class="wheel-main" :style="{ transform: `rotate(${rotation}deg)` }"
+                                    @transitionend="onWheelStop">
+                                    <img src="https://w.ladicdn.com/s700x700/5977f59d1abc544991d43c5b/vong-quay-20251029070716-mxpe3.png"
+                                        class="img-wheel-main" alt="Vòng quay">
+                                </div>
+                                <button class="spin-button-new" @click="spin" :disabled="isSpinning">
+                                    <img src="https://w.ladicdn.com/source/spin-btn1.svg" class="img-spin-btn"
+                                        alt="Start">
+                                </button>
                             </div>
-                            <button class="spin-button-new" @click="spin" :disabled="isSpinning">
-                                <img src="https://w.ladicdn.com/source/spin-btn1.svg" class="img-spin-btn" alt="Start">
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -114,73 +114,78 @@ const onWheelStop = () => {
 </template>
 
 <style scoped>
+/* =========================================
+   1. BASE - MOBILE FIRST (< 48em) 
+   ========================================= */
 .lucky-wheel-section {
-    padding: 0px 0px;
+    position: relative;
     background-color: #fff;
     font-family: 'Montserrat', sans-serif;
-}
-
-.banner-outer {
-    position: relative;
-    width: 100%;
-    min-height: 700px;
+    /* Không dùng height: 1000px nữa, dùng padding để nội dung tự đẩy chiều cao */
+    padding: 4rem 0 6rem 0;
+    margin: var(--size-800) 0;
     overflow: hidden;
-    display: flex;
-    align-items: center;
 }
 
-.banner-bg {
+.banner-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: 100% 100%;
-    z-index: 1;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    /* Ảnh nền chìm dưới cùng */
 }
 
-.banner-content {
+.banner-outer {
     position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    z-index: 1;
+    /* Nổi lên trên ảnh nền */
     width: 100%;
-    padding: 40px 0 40px;
 }
 
-.section-header {
-    position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
+.banner-header {
     text-align: center;
-    z-index: 3;
+    margin-bottom: 3rem;
+    /* Đẩy nội dung bên dưới cách ra một khoảng */
 }
 
 .main-title {
-    color: #a21d44;
-    font-size: 28px;
-    font-weight: 900;
+    color: var(--primary-color);
+    font-size: var(--fs-secondary-heading);
+    font-weight: var(--fw-extreme-bold);
     line-height: 1.3;
-    margin-top: -40px;
+    margin: 0;
 }
 
-.branding-box {
-    flex: 1;
+/* Nội dung xếp dọc trên Mobile */
+.banner-content {
     display: flex;
-    justify-content: flex-start;
-    margin-left: 60px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    width: 100%;
+}
+
+/* Phần Ưu đãi */
+.branding-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
     cursor: pointer;
 }
 
 .branding-container {
     position: relative;
-    display: inline-block;
+    max-width: 90%;
+    /* Thu nhỏ lại 1 chút trên mobile */
 }
 
 .img-uudai {
-    max-width: 480px;
+    width: 100%;
+    max-width: 400px;
     height: auto;
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
     display: block;
@@ -188,37 +193,36 @@ const onWheelStop = () => {
 
 .btn-quay-ngay-image-overlay {
     position: absolute;
-    bottom: -15px;
-    left: 12%;
-    width: 360px;
+    bottom: -15%;
+    left: 5%;
+    width: 90%;
+    max-width: 320px;
     z-index: 10;
-    animation-name: fadeInLeft;
-    animation-duration: 2s;
-    animation-delay: 2s;
-    animation-iteration-count: infinite;
+    animation: fadeInLeft 2s infinite 2s;
 }
 
 .img-btn-quay {
-    width: 80%;
+    width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
     display: block;
 }
 
+/* Phần Vòng quay */
 .wheel-box {
-    flex: 1;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    top: -10px;
-    left: -220px;
+    margin-right: var(--size-400);
+    transform: translate(200px,-20px)
 }
 
 .wheel-container {
     position: relative;
-    width: 450px;
-    height: 450px;
+    width: 320px;
+    /* Kích thước nhỏ gọn cho Mobile */
+    height: 320px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -253,11 +257,7 @@ const onWheelStop = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-
-    /* Hiệu ứng xoay mượt mà */
     transition: transform 5s cubic-bezier(0.15, 0, 0.15, 1);
-
-    /* Bóng đổ tỏa đều xung quanh để KHÔNG bị lệch tâm khi xoay */
     filter: drop-shadow(0 0 20px rgba(0, 0, 0, 0.2));
     will-change: transform;
     z-index: 10;
@@ -265,7 +265,6 @@ const onWheelStop = () => {
 
 .img-wheel-main {
     width: 85%;
-    /* Kích thước ảnh vòng quay */
     height: 85%;
     object-fit: contain;
     margin: 0;
@@ -276,8 +275,9 @@ const onWheelStop = () => {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 85px;
-    height: 85px;
+    width: 65px;
+    height: 65px;
+    /* Nút nhỏ hơn trên mobile */
     border: none;
     background: transparent;
     cursor: pointer;
@@ -292,50 +292,81 @@ const onWheelStop = () => {
     filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
 }
 
-@media (max-width: 1100px) {
-    .wheel-container {
-        width: 380px;
-        height: 380px;
-    }
-}
-
-@media (max-width: 991px) {
-    .banner-outer {
-        min-height: 800px;
-    }
-
+/* =========================================
+   2. TABLET (min-width: 48em / ~768px)
+   ========================================= */
+@media(min-width: 48em) {
     .wheel-box {
-        top: 0;
-        left: 0;
+        transform: translate(200px,-40px);
+    }
+
+    .wheel-container {
+        width: 400px;
+        height: 400px;
+    }
+
+    .img-uudai {
+        max-width: 480px;
+    }
+
+    .spin-button-new {
+        width: 80px;
+        height: 80px;
     }
 }
 
-/* Định nghĩa hiệu ứng fadeInLeft */
+/* =========================================
+   3. DESKTOP (min-width: 64em / ~1024px)
+   ========================================= */
+@media(min-width: 64em) {
+    .lucky-wheel-section {
+        padding: 6rem 0;
+        /* Cho không gian thoáng hơn ở desktop */
+    }
+
+    /* KÍCH HOẠT LƯỚI GRID 2 CỘT */
+    .banner-content {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+    }
+
+    /* Đẩy khối hình ảnh sang lề phải của cột trái để đứng sát vòng quay */
+    .branding-box {
+        justify-content: flex-end;
+        padding-right: 2rem;
+    }
+
+    /* Đẩy khối vòng quay sang lề trái của cột phải */
+    .wheel-box {
+        justify-content: flex-start;
+        padding-left: 0;
+        transform: translateX(-40px);
+    }
+
+    .wheel-container {
+        width: 450px;
+        height: 450px;
+    }
+
+    .spin-button-new {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+/* =========================================
+   4. ANIMATIONS
+   ========================================= */
 @keyframes fadeInLeft {
     0% {
         opacity: 0;
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-1%, 0, 0);
+        transform: translate3d(-20%, 0, 0);
     }
 
     100% {
         opacity: 1;
-        -webkit-transform: none;
         transform: none;
-    }
-}
-
-@keyframes fadeInLeftCustom {
-    0% {
-        opacity: 0;
-        -webkit-transform: translateX(-20px);
-        -ms-transform: translateX(-20px);
-        transform: translateX(-20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateX(0);
     }
 }
 </style>

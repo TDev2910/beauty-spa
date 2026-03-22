@@ -65,7 +65,8 @@
 @reference "tailwindcss";
 
 .customer-experience-section {
-    min-height: 2000px;
+    min-height: 1600px;
+    height: auto;
     position: relative;
 }
 
