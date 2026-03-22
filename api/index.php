@@ -1,42 +1,69 @@
 <?php
 
-// 1. Tạo cấu trúc thư mục tạm hoàn chỉnh trong /tmp
+/**
+ * Vercel Serverless Entry Point for Laravel 11/12
+ *
+ * Vercel's filesystem is read-only except for /tmp.
+ * We must create all necessary directories and set paths BEFORE
+ * bootstrapping Laravel, so ViewServiceProvider registers the correct paths.
+ */
+
+// ============================================================
+// STEP 1: Create all necessary writable directories in /tmp
+// ============================================================
 $storagePath = '/tmp/storage';
-$directories = [
+
+$dirs = [
     '/framework/views',
     '/framework/cache',
     '/framework/cache/data',
     '/framework/sessions',
     '/logs',
-    '/bootstrap/cache'
+    '/app',
+    '/app/public',
 ];
 
-foreach ($directories as $dir) {
-    if (!is_dir($storagePath . $dir)) {
-        mkdir($storagePath . $dir, 0755, true);
+foreach ($dirs as $dir) {
+    $fullPath = $storagePath . $dir;
+    if (!is_dir($fullPath)) {
+        mkdir($fullPath, 0755, true);
     }
 }
 
-// 2. Ép các biến môi trường quan trọng
-putenv("LOG_CHANNEL=stderr"); // Ghi log ra Vercel
-putenv("SESSION_DRIVER=cookie"); // Dùng cookie thay vì file session
-putenv("VIEW_COMPILED_PATH=$storagePath/framework/views");
-putenv("APP_CONFIG_CACHE=$storagePath/bootstrap/cache/config.php");
-putenv("APP_ROUTES_CACHE=$storagePath/bootstrap/cache/routes.php");
+// ============================================================
+// STEP 2: Set ALL environment variables BEFORE laravel boots.
+// Using both putenv() AND $_ENV/$_SERVER for maximum compatibility.
+// ============================================================
+$envVars = [
+    'APP_STORAGE_PATH'  => $storagePath,
+    'VIEW_COMPILED_PATH' => $storagePath . '/framework/views',
+    'APP_CONFIG_CACHE'  => $storagePath . '/framework/cache/config.php',
+    'APP_ROUTES_CACHE'  => $storagePath . '/framework/cache/routes.php',
+    'APP_SERVICES_CACHE'=> $storagePath . '/framework/cache/services.php',
+    'APP_PACKAGES_CACHE'=> $storagePath . '/framework/cache/packages.php',
+    'CACHE_STORE'       => 'array',
+    'CACHE_DRIVER'      => 'array',
+    'SESSION_DRIVER'    => 'cookie',
+    'LOG_CHANNEL'       => 'stderr',
+];
 
-// 3. Khởi chạy Laravel
+foreach ($envVars as $key => $value) {
+    putenv("$key=$value");
+    $_ENV[$key] = $value;
+    $_SERVER[$key] = $value;
+}
+
+// ============================================================
+// STEP 3: Bootstrap and run Laravel 11/12
+// ============================================================
+define('LARAVEL_START', microtime(true));
+
 require __DIR__ . '/../vendor/autoload.php';
+
+/** @var \Illuminate\Foundation\Application $app */
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-// 4. QUAN TRỌNG NHẤT: Trói buộc toàn bộ Storage Path của Laravel vào /tmp
+// Override storage path after app creation (belt-and-suspenders approach)
 $app->useStoragePath($storagePath);
 
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
-$response = $kernel->handle(
-    $request = Illuminate\Http\Request::capture()
-);
-
-$response->send();
-
-$kernel->terminate($request, $response);
+$app->handleRequest(\Illuminate\Http\Request::capture());
