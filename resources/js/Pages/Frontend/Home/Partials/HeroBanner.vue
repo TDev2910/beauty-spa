@@ -55,47 +55,49 @@
     flex-direction: column;
     align-items: center;
     font-family: 'Inter', sans-serif;
+    border-radius: 0 !important;
+
 }
 
 .reg-title {
     color: #fff;
-    /* Chuyển sang trắng cho dễ nhìn trên nền đỏ */
     text-align: center;
-    font-size: 26px;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
     font-weight: 900;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     font-family: 'Montserrat', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .form-row {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 15px;
-    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+    margin-bottom: 20px;
 }
 
 .form-row input,
 .form-row select {
-    width: 400px;
-    padding: 12px 15px;
+    width: 100%;
+    padding: 15px 20px;
     border: none;
     background: #fff;
-    border-radius: 8px;
-    color: #333;
-    font-weight: 500;
+    border-radius: 12px;
+    color: #003057;
+    font-weight: 700;
     font-size: 16px;
     font-family: 'Inter', sans-serif;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 .form-row select {
     appearance: none;
-    /* Xóa mũi tên mặc định của trình duyệt */
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23003057' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    background-position: right 15px center;
-    background-size: 15px;
+    background-position: right 20px center;
+    background-size: 12px;
     cursor: pointer;
 }
 
@@ -103,14 +105,9 @@
     color: #888;
 }
 
-.form-row input.full-width,
-.form-row select.full-width {
-    width: calc(800px + 15px);
-}
-
 .form-row input::placeholder {
     color: #888;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .form-button {
@@ -122,13 +119,12 @@
     background: #a21d44;
     color: #fff;
     border: 2px solid #fff;
-    padding: 15px 80px;
+    padding: 12px 80px;
     border-radius: 50px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 20px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
 }
 
@@ -137,6 +133,24 @@
     color: #a21d44;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 48em) {
+    .form-button button {
+        padding: 15px 40px;
+        /* Giảm padding ngang để chữ không bị tràn */
+        font-size: 16px;
+        /* Giảm nhẹ size chữ để vừa với màn hình nhỏ */
+        width: 100%;
+        /* Có thể để 100% để nút dài đều đẹp như các ô input */
+        max-width: 300px;
+        /* (Tùy chọn) Giới hạn độ rộng nếu không muốn quá dài */
+    }
+
+    .registration-form-box {
+        padding: 25px 15px;
+        /* Giảm padding của khung bao ngoài cho gọn */
+    }
 }
 </style>
 

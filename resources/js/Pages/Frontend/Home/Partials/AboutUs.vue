@@ -44,18 +44,26 @@
 </template>
 
 <style scoped>
+/* 1. SECTION & LAYOUT */
 .about-us-section {
     background-color: var(--primary-color-200);
     padding: 2rem 0 4rem 0;
 }
 
+.au-content {
+    align-items: center;
+    gap: 4rem;
+    margin-top: 1.5rem;
+}
+
+/* 2. HEADING STYLES */
 .au-heading {
     text-align: center;
     margin-bottom: 0.5rem;
     font-weight: var(--fw-extreme-bold);
 }
 
-.au-heading>* {
+.au-heading > * {
     margin: 0;
 }
 
@@ -72,18 +80,14 @@
     color: var(--primary-color);
 }
 
-.au-content {
-    align-items: center;
-    gap: 4rem;
-    margin-top: 1.5rem;
-}
-
+/* 3. TEXT STYLES */
 .au-content-left .au-text {
     margin-top: 1rem;
     font-weight: var(--fw-bold);
     color: var(--dark-color-600);
 }
 
+/* 4. GALLERY BASE STYLES */
 .au-gallery {
     position: relative;
     width: 470px;
@@ -102,15 +106,16 @@
     height: 100%;
 }
 
+/* 5. INDIVIDUAL GALLERY ITEMS POSITION */
 .au-gallery .gallery-item:nth-child(1) {
     width: 252px;
     height: 252px;
     position: absolute;
     top: 0;
     left: 0;
-
     border-radius: 10px 40px;
 }
+
 .au-gallery .gallery-item:nth-child(2) {
     width: 182px;
     height: 182px;
@@ -119,6 +124,7 @@
     left: 258px;
     border-radius: 10px 40px;
 }
+
 .au-gallery .gallery-item:nth-child(3) {
     width: 212px;
     height: 212px;
@@ -127,6 +133,7 @@
     left: 258px;
     border-radius: 40px 10px;
 }
+
 .au-gallery .gallery-item:nth-child(4) {
     width: 212px;
     height: 212px;
@@ -134,6 +141,55 @@
     top: 259px;
     left: 40px;
     border-radius: 40px 10px;
+}
+
+/* 6. RESPONSIVE OPTIMIZATION (MOBILE & TABLET) */
+@media (max-width: 64em) {
+    .about-us-section {
+        padding: 3rem 0;
+    }
+
+    .au-content {
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .au-content-left .au-text {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .au-content-right {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1rem;
+        overflow: hidden;
+    }
+
+    .au-gallery {
+        flex-shrink: 0;
+        transform: scale(0.8);
+        transform-origin: center center;
+        margin: 0 auto;
+        position: relative;
+        left: 0;
+    }
+}
+
+@media (max-width: 30em) {
+    .au-gallery {
+        transform: scale(0.65);
+        margin: -60px 0;
+    }
+
+    .au-heading .au-title {
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+    }
+
+    .au-heading .au-subtitle {
+        font-size: 1.2rem;
+    }
 }
 </style>
 

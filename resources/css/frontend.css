@@ -2,6 +2,7 @@
 @import "./frontend/abstracts/_animations.css";
 @import "./frontend/components/_buttons.css";
 @import "./frontend/components/_modals.css";
+@import "./frontend/components/_lucky-wheel.css";
 @import "./frontend/layouts/_navbar.css";
 @import "./frontend/layouts/_footer.css";
 
