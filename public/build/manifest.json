@@ -28,7 +28,7 @@
     "src": "public/img/top-header-img1.jpeg"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DdvdcUT1.css",
+    "file": "assets/app-CQglzzEU.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -37,13 +37,13 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-CRf8P-79.js",
+    "file": "assets/app-0qqss0s3.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-DU2k4ZJU.css",
-      "assets/app-DdvdcUT1.css"
+      "assets/app-ChD9kpsi.css",
+      "assets/app-CQglzzEU.css"
     ],
     "assets": [
       "assets/top-header-img1-Bue3AYZg.jpeg",
