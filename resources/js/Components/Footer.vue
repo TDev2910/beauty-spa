@@ -1,9 +1,9 @@
 <template>
-    <footer id="footer" class="footer-wrapper">
-        <div class="container">
-            <div class="footer-grid">
+    <footer id="footer">
+        <div class="custom-container">
+            <div class="footer-wrapper">
                 <!-- Cột 1: Thông tin công ty & Logo -->
-                <div class="ladi-image">
+                <div class="footer-info">
                     <img src="https://w.ladicdn.com/s500x400/5977f59d1abc544991d43c5b/seoul_spa_logo_8_3-1-04-min-20250219021940-lqcdy.png"
                         alt="Seoul Center Logo" class="footer-logo">
                     <div class="content">
@@ -17,30 +17,29 @@
                     </div>
                     <div class="contact-info">
                         <h1>THÔNG TIN LIÊN HỆ</h1>
-                        <div class="contact-item">
-                            <i class="pi pi-phone"></i>
-                            <p>(+84) 914 269 346</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="pi pi-map-marker"></i>
-                            <p>375 Nguyễn Thượng Hiền, Phường 11, Quận 10, TP. Hồ Chí Minh</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="pi pi-envelope"></i>
-                            <p>cskh@seoulcenter.vn</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="pi pi-clock"></i>
-                            <div class="working-time">
-                                <p><strong>Thời gian làm việc:</strong></p>
-                                <p>Từ 08:45 đến 19:30 hàng ngày</p>
-                            </div>
-                        </div>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <i class="pi pi-phone"></i>
+                                <span>(+84) 914 269 346</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="pi pi-map-marker"></i>
+                                <span>375 Nguyễn Thượng Hiền, Phường 11, Quận 10, TP. Hồ Chí Minh</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="pi pi-envelope" size="small"></i>
+                                <span>cskh@seoulcenter.vn</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="pi pi-clock"></i>
+                                <span><strong>Thời gian làm việc:</strong> Từ 08:45 đến 19:30 hàng ngày</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Cột 2: Chi nhánh -->
-                <div class="footer-col">
+                <div class="footer-forms | footer-col">
                     <div class="branch-section">
                         <div class="branch-header-box">
                             PHÒNG KHÁM CHUYÊN KHOA DA LIỄU SEOUL CENTER
@@ -77,13 +76,14 @@
                         <!-- form 2  -->
                         <div class="registration-form-box">
                             <h2 class="reg-title">ĐĂNG KÝ NHẬN ƯU ĐÃI</h2>
-                            <p class="reg-sub"><i style="color: #000;font-size: 15px;font-weight: bold;">*Chỉ áp dụng cho 30 khách hàng đăng ký đầu tiên*</i></p>
+                            <p class="reg-sub"><i style="color: #000;font-size: 15px;font-weight: bold;">*Chỉ áp dụng
+                                    cho 30 khách hàng đăng ký đầu tiên*</i></p>
                             <form @submit.prevent>
-                                <div class="form-row">
+                                <div class="form-row two-cols">
                                     <input type="text" placeholder="Họ và Tên">
                                     <input type="tel" placeholder="Số điện thoại">
                                 </div>
-                                <div class="form-row" style="height: 50px;">
+                                <div class="form-row">
                                     <input type="text" placeholder="Để lại lời nhắn cho chúng tôi">
                                 </div>
                                 <div class="form-button">
@@ -133,241 +133,5 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.ladi-image {
-    width: 100%;
-    height: 100%;
-}
-
-.content {
-    margin-top: 20px;
-    font-size: 16px;
-    font-weight: 550;
-    line-height: 1.6;
-}
-
-.contact-info {
-    margin-top: 30px;
-}
-
-.contact-info h1 {
-    font-size: 20px;
-    font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #fff;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.contact-item i {
-    font-size: 22px;
-}
-
-.contact-item p {
-    margin: 0;
-    font-size: 16px;
-    font-weight: 550;
-}
-
-.working-time p {
-    margin: 0;
-}
-
-/* Branch Box */
-.branch-section {
-    display: flex;
-    flex-direction: column;
-    max-width: 750px;
-    margin: 0 auto;
-    gap: 15px;
-}
-
-.branch-header-box {
-    border: 1px solid #fff;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 15px;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 12px;
-    font-size: 15px;
-}
-
-.branch-container {
-    background: #fff;
-    color: #333;
-    border-radius: 15px;
-    padding: 20px;
-}
-
-.branch-sub {
-    font-weight: bold;
-    color: #a21d44;
-    font-size: 15px;
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.branch-list {
-    max-height: 170px;
-    overflow-y: auto;
-    padding-right: 5px;
-}
-
-.branch-list::-webkit-scrollbar {
-    width: 6px;
-}
-
-.branch-list::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-.branch-list::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
-
-.branch-item {
-    margin-bottom: 10px;
-    padding-bottom: 10px;
-    border-bottom: 1px dashed #ddd;
-    font-size: 13px;
-}
-
-.branch-item p:not(.branch-name) {
-    color: #000;
-    font-weight: 600;
-}
-
-.branch-name {
-    color: #a21d44;
-    font-weight: 700;
-    position: relative;
-    padding-left: 12px;
-}
-
-.branch-name::before {
-    content: '·';
-    position: absolute;
-    left: 0;
-    top: 0;
-    font-size: 18px;
-    line-height: 1;
-}
-
-.view-more-link {
-    text-align: center;
-    margin-top: 5px;
-    color: #fff;
-}
-
-.view-more-link a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 16px;
-}
-
-/* Reg Box */
-.registration-form-box {
-    background: #fff;
-    border-radius: 15px;
-    padding: 25px;
-    color: #333;
-}
-
-.reg-title {
-    color: #a21d44;
-    text-align: center;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.reg-sub {
-    text-align: center;
-    font-size: 13px;
-    margin-bottom: 15px;
-}
-
-.form-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.form-row input {
-    flex: 1;
-    padding: 6px;
-    border: 1px solid #a21d44;
-    border-radius: 5px;
-    color: #000;
-    font-weight: 700;
-    font-size: 15px;
-}
-
-.form-row input::placeholder,
-textarea::placeholder {
-    color: #000;
-    font-weight: 700;
-}
-
-textarea {
-    width: 100%;
-    height: 40px;
-    padding: 12px;
-    border: 1px solid #a21d44;
-    border-radius: 5px;
-    margin-bottom: 15px;
-    resize: none;
-    color: #000;
-    font-weight: 700;
-}
-
-.form-button {
-    text-align: center;
-}
-
-.form-button button {
-    background: #a21d44;
-    color: #fff;
-    border: none;
-    padding: 7px 35px;
-    border-radius: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    text-align: center;
-    margin-top: 8px;
-}
-
-.ticker-container {
-    margin-top: -35px;
-    padding: 10px 0;
-    text-align: center;
-    overflow: hidden;
-}
-
-.ticker-text {
-    font-size: 17px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Ticker Animation */
-.fade-slide-enter-active,
-.fade-slide-leave-active {
-    transition: all 0.5s ease;
-}
-
-.fade-slide-enter-from,
-.fade-slide-leave-to {
-    opacity: 0;
-    transform: translateX(-10px);
-}
+/* Styles moved to _footer.css for global responsive optimization */
 </style>

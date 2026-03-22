@@ -46,7 +46,7 @@ const isOpen = ref(false);
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background-color: #a21d44;
+    background-color: #D76C82;
     /* Màu đỏ thương hiệu của bạn */
     color: white;
     border: none;
@@ -137,6 +137,20 @@ const isOpen = ref(false);
 .speed-dial-leave-to {
     opacity: 0;
     transform: translateY(20px) scale(0.5);
+}
+
+/* ĐẨY NÚT LÊN CAO TRÊN MOBILE */
+@media (max-width: 48em) {
+    .fab-wrapper {
+        bottom: 100px;
+        right: 15px;
+    }
+
+    .fab-main {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
 }
 
 /* Hiệu ứng nháy nháy (Pulse & Glow) */
