@@ -1,9 +1,9 @@
 <template>
-    <footer id="footer" class="footer-wrapper">
-        <div class="container">
-            <div class="footer-grid">
+    <footer id="footer">
+        <div class="custom-container">
+            <div class="footer-wrapper | text-center-only-md">
                 <!-- Cột 1: Thông tin công ty & Logo -->
-                <div class="ladi-image">
+                <div class="footer-info">
                     <img src="https://w.ladicdn.com/s500x400/5977f59d1abc544991d43c5b/seoul_spa_logo_8_3-1-04-min-20250219021940-lqcdy.png"
                         alt="Seoul Center Logo" class="footer-logo">
                     <div class="content">
@@ -17,30 +17,29 @@
                     </div>
                     <div class="contact-info">
                         <h1>THÔNG TIN LIÊN HỆ</h1>
-                        <div class="contact-item">
-                            <i class="pi pi-phone"></i>
-                            <p>(+84) 914 269 346</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="pi pi-map-marker"></i>
-                            <p>375 Nguyễn Thượng Hiền, Phường 11, Quận 10, TP. Hồ Chí Minh</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="pi pi-envelope"></i>
-                            <p>cskh@seoulcenter.vn</p>
-                        </div>
-                        <div class="contact-item">
-                            <i class="pi pi-clock"></i>
-                            <div class="working-time">
-                                <p><strong>Thời gian làm việc:</strong></p>
-                                <p>Từ 08:45 đến 19:30 hàng ngày</p>
-                            </div>
-                        </div>
+                        <ul class="contact-list">
+                            <li class="contact-item">
+                                <i class="pi pi-phone"></i>
+                                <span>(+84) 914 269 346</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="pi pi-map-marker"></i>
+                                <span>375 Nguyễn Thượng Hiền, Phường 11, Quận 10, TP. Hồ Chí Minh</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="pi pi-envelope" size="small"></i>
+                                <span>cskh@seoulcenter.vn</span>
+                            </li>
+                            <li class="contact-item">
+                                <i class="pi pi-clock"></i>
+                                <span><strong>Thời gian làm việc:</strong> Từ 08:45 đến 19:30 hàng ngày</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- Cột 2: Chi nhánh -->
-                <div class="footer-col">
+                <div class="footer-forms | footer-col">
                     <div class="branch-section">
                         <div class="branch-header-box">
                             PHÒNG KHÁM CHUYÊN KHOA DA LIỄU SEOUL CENTER
@@ -77,7 +76,8 @@
                         <!-- form 2  -->
                         <div class="registration-form-box">
                             <h2 class="reg-title">ĐĂNG KÝ NHẬN ƯU ĐÃI</h2>
-                            <p class="reg-sub"><i style="color: #000;font-size: 15px;font-weight: bold;">*Chỉ áp dụng cho 30 khách hàng đăng ký đầu tiên*</i></p>
+                            <p class="reg-sub"><i style="color: #000;font-size: 15px;font-weight: bold;">*Chỉ áp dụng
+                                    cho 30 khách hàng đăng ký đầu tiên*</i></p>
                             <form @submit.prevent>
                                 <div class="form-row">
                                     <input type="text" placeholder="Họ và Tên">
@@ -133,20 +133,15 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.ladi-image {
-    width: 100%;
-    height: 100%;
-}
-
 .content {
     margin-top: 20px;
-    font-size: 16px;
+    font-size: var(--fs-600);
     font-weight: 550;
     line-height: 1.6;
 }
 
 .contact-info {
-    margin-top: 30px;
+    margin-top: var(--size-700);
 }
 
 .contact-info h1 {
@@ -159,11 +154,36 @@ onUnmounted(() => {
     padding-bottom: 5px;
 }
 
+.contact-list {
+    display: flex;
+    flex-direction: column;
+
+}
+
 .contact-item {
+    font-size: var(--fs-nav);
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: var(--size-200);
     margin-bottom: 15px;
+}
+
+.contact-item i {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+.contact-item p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- TRẠNG THÁI MOBILE/TABLET (max-width: 64em) --- */
+@media(max-width: 64em) {
+    .contact-list {
+        width: fit-content;
+        margin-inline: auto;
+    }
 }
 
 .contact-item i {
@@ -176,8 +196,11 @@ onUnmounted(() => {
     font-weight: 550;
 }
 
-.working-time p {
+.working-time {
     margin: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--size-100);
 }
 
 /* Branch Box */

@@ -6,6 +6,7 @@
 @import "./frontend/layouts/_footer.css";
 
 :root {
+    /* color */
     --neutral-color-100: hsl(0, 0%, 100%);
     --neutral-color-150: hsl(186, 100%, 96%);
     --neutral-color-200: hsl(210, 14%, 97%);
@@ -18,11 +19,12 @@
 
     --primary-color: #a21d44;
     --primary-color-200: hsl(342, 65%, 96%);
+
     --secondary-color: #d4af37;
+
     --dark-color-600: hsl(214, 91%, 26%);
     --dark-color-400: hsl(214, 91%, 60%);
 
-    /* linear gradient color */
     --linear-gradient-color: linear-gradient(
         rgb(10, 103, 233),
         rgb(223, 24, 85)
@@ -31,8 +33,11 @@
         rgb(255, 0, 100),
         rgb(1, 44, 121)
     );
-    --text-color: #333333;
-    --bg-light: #f9f9f9;
+
+    --text-color: hsl(0, 0%, 20%);
+    --bg-light: hsl(0, 0%, 98%);
+    
+    /* font size, font weight, font family */
     --font-family: "Montserrat", sans-serif;
 
     --fs-300: 0.8125rem;
@@ -56,6 +61,18 @@
     --fs-nav: var(--fs-400);
     --fs-label: var(--fs-400);
     --fs-button: var(--fs-400);
+
+    /* size */
+    --size-100: 0.25rem;
+    --size-200: 0.5rem;
+    --size-300: 0.75rem;
+    --size-400: 1rem;
+    --size-500: 1.25rem;
+    --size-600: 1.5rem;
+    --size-700: 2rem;
+    --size-800: 2.5rem;
+    --size-900: 3rem;
+    --size-1000: 5rem;
 }
 
 @media (min-width: 48em) {
