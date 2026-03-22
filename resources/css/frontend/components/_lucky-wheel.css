@@ -1,0 +1,285 @@
+/* Lucky Wheel Component - SEOUL CENTER Optimized Responsive */
+.lucky-wheel-section {
+    position: relative;
+    background-color: #fff;
+    padding: 2rem 0;
+    margin: 0; 
+    overflow: hidden;
+    min-height: auto;
+    display: flex;
+    align-items: center;
+}
+
+@media (min-width: 64em) {
+    .lucky-wheel-section {
+        padding: 3rem 0;
+        min-height: 600px;
+    }
+}
+
+.banner-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    background-size: cover;
+    background-position: center bottom; /* Luôn giữ bục 3D ở dưới cùng */
+}
+
+.banner-outer {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.banner-header {
+    text-align: center;
+    margin-bottom: clamp(1.5rem, 5vw, 3.5rem);
+    padding-inline: 15px;
+}
+
+.main-title {
+    color: var(--primary-color);
+    font-size: clamp(1.1rem, 4vw, 2rem);
+    font-weight: 900;
+    line-height: 1.4; 
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center; 
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem; /* Giảm gap trên mobile để không bị rời rạc */
+    width: 100%;
+}
+
+@media (min-width: 64em) {
+    .banner-content {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: 2.5rem; /* Gap vừa đủ cho PC */
+    }
+}
+
+/* BRANDING BOX */
+.branding-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    transform: translateX(-90px) translateY(-25px); 
+
+}
+
+.branding-container {
+    position: relative;
+    max-width: 450px;
+    width: 60%;
+    margin-bottom: 1rem; 
+}
+
+@media (min-width: 64em) {
+    .branding-box {
+        justify-content: center; 
+        padding-right: 0; 
+        transform: translateX(-50px) translateY(-20px); 
+    }
+    /* text quay ngay */
+    .btn-quay-ngay-image-overlay {
+        bottom: 5% !important; 
+        width: 65%; 
+    }
+}
+
+.img-uudai {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    display: block;
+}
+
+/* Căn giữa tuyệt đối nút Quay Ngay và tối ưu vị trí */
+.btn-quay-ngay-image-overlay {
+    position: absolute;
+    bottom: 5%; 
+    left: 52%;
+    transform: translateX(-50%);
+    width: 65%; 
+    max-width: 280px;
+    z-index: 10;
+    animation: fadeInLeft 2s ease-in-out infinite;
+}
+
+.img-btn-quay {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.3));
+    display: block;
+}
+
+/* WHEEL BOX */
+.wheel-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transform: translateX(50px) translateY(-80px);
+}
+
+@media (min-width: 64em) {
+    .wheel-box {
+        justify-content: center;
+        padding-left: 0;
+        transform: translateX(-130px) translateY(-70px); 
+    }
+}
+
+.wheel-container {
+    position: relative;
+    width: min(430px, 92vw);
+    height: min(430px, 92vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 48em) {
+    .wheel-container {
+        width: min(300px, 80vw);
+        height: min(300px, 80vw);
+    }
+}
+
+.wheel-axis {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wheel-outer-glow {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(236, 64, 122, 0.25) 0%, transparent 75%);
+    box-shadow: 0 0 30px rgba(236, 64, 122, 0.15);
+    pointer-events: none;
+    z-index: 5;
+}
+
+.wheel-main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 5s cubic-bezier(0.15, 0, 0.15, 1);
+    filter: drop-shadow(0 15px 35px rgba(0, 0, 0, 0.3)); /* Shadow sâu hơn để tạo hiệu ứng nổi */
+    will-change: transform;
+    z-index: 10;
+}
+
+.img-wheel-main {
+    width: 90%; /* Tăng nhẹ kích thước so với bục */
+    height: 90%;
+    object-fit: contain;
+}
+
+.spin-button-new {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 25%;
+    max-width: 85px;
+    min-width: 60px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 30;
+    padding: 0;
+    transition: transform 0.2s;
+}
+
+.spin-button-new:active {
+    transform: translate(-50%, -50%) scale(0.9);
+}
+
+.img-spin-btn {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ANIMATIONS */
+@keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-10px); }
+}
+
+@keyframes fadeInLeft {
+    0% { 
+        opacity: 0; 
+        transform: translateX(calc(-50% - 50px)); 
+    }
+    /* Đến 50% là đã vào vị trí trung tâm */
+    50% { 
+        opacity: 1; 
+        transform: translateX(-50%); 
+    }
+    /* Từ 50% đến 100% là đứng yên chờ vòng lặp mới */
+    100% { 
+        opacity: 1; 
+        transform: translateX(-50%); 
+    }
+}
+
+/* --- TỐI ƯU POPUP QUAY THƯỞNG (SweetAlert2) --- */
+.swal2-popup {
+    width: 90% !important;
+    max-width: 450px !important;
+    border-radius: 20px !important;
+    padding: 1.5rem 0.5rem !important;
+}
+
+.swal2-title {
+    padding: 0 10px !important;
+}
+
+.swal2-input {
+    height: 3.5rem !important;
+    margin: 10px auto !important;
+    border-radius: 12px !important;
+    width: 85% !important;
+    font-size: 16px !important;
+    border: 1px solid #ddd !important;
+}
+
+.swal2-confirm {
+    padding: 12px 40px !important;
+    border-radius: 50px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    text-transform: uppercase !important;
+    margin-top: 15px !important;
+}
+
+.swal2-validation-message {
+    font-size: 13px !important;
+}
