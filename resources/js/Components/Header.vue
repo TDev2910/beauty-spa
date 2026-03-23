@@ -1,3 +1,7 @@
+<script setup>
+import Navbar from "./Frontend/Navbar.vue";
+</script>
+
 <template>
     <div class="top-header">
         <div class="th-bg"></div>
