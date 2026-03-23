@@ -23,12 +23,8 @@
     "file": "assets/th-bg-img-If7SdsrA.png",
     "src": "public/img/th-bg-img.png"
   },
-  "public/img/top-header-img1.jpeg": {
-    "file": "assets/top-header-img1-Bue3AYZg.jpeg",
-    "src": "public/img/top-header-img1.jpeg"
-  },
   "resources/css/app.css": {
-    "file": "assets/app-CQglzzEU.css",
+    "file": "assets/app-SBB-37xi.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -37,16 +33,15 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-0qqss0s3.js",
+    "file": "assets/app-NNH69XSM.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-ChD9kpsi.css",
-      "assets/app-CQglzzEU.css"
+      "assets/app-DAZOpUD4.css",
+      "assets/app-SBB-37xi.css"
     ],
     "assets": [
-      "assets/top-header-img1-Bue3AYZg.jpeg",
       "assets/primeicons-DMOk5skT.eot",
       "assets/primeicons-C6QP2o4f.woff2",
       "assets/primeicons-WjwUDZjB.woff",
