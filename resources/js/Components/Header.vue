@@ -3,32 +3,6 @@ import Navbar from "./Frontend/Navbar.vue";
 </script>
 
 <template>
-    <div class="top-header">
-        <div class="th-bg"></div>
-        <div class="custom-container" style="--container-padding:.5rem">
-            <div class="th-content">
-                <!-- Cột trái: Ảnh logo/nhân vật -->
-                <div class="th-left">
-                    <img src="../../../public/img/top-header-img1.jpeg" alt="Logo" class="th-img">
-                </div>
-
-                <!-- Cột phải: Bao gồm Slogan và Combo -->
-                <div class="th-right">
-                    <div class="th-slogan">
-                        <h2 class="text-primary">MỞ KHÓA NHAN SẮC</h2>
-                        <span class="dash">-</span>
-                        <h2 class="text-dark">BẮT TRỌN DEAL HỜI</h2>
-                    </div>
-
-                    <div class="th-combo">
-                        <div class="th-item bg-red">MUA 1 DV</div>
-                        <div class="th-item bg-blue text-blink">TẶNG</div>
-                        <div class="th-item bg-red">1 COMBO TỨ QUÝ</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="marquee">
         <div class="custom-container">
             <span class="text-marquee">

@@ -14,7 +14,7 @@
 </template>
 
 <style scoped>
-.main-content{
+.main-content {
     background: var(--primary-color-200);
 }
 </style>
